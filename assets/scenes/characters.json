@@ -55,21 +55,30 @@
     "franny1": {
         "greeting": {
             "0": "<p>Hey! Can't you see that we're busy here!? Be a doll and run this tray of food over to those kids in the corner!</p>",
-            "1": "<button id='greeting' class='dialogue'>Okay, sounds like I don't have any other choice.</button><br>",
+            "1": "<button id='accept' class='dialogue'>Okay, sounds like I don't have any other choice.</button><br>"
+        },
+        "accept": {
+            "0": "Thank you sweet heart, I'll make it up to you, I promise.",
             "eventID": "foodTray"
         }
     },
     "franny2": {
         "greeting": {
             "0": "<p>Okay, can you do something else for me? See that man at the counter? He's a regular, been coming for years, could you please go over and let him know his food is on the way?</p>",
-            "1": "<button id='greeting' class='dialogue'>Okay, sounds like I don't have any other choice.</button><br>",
+            "1": "<button id='accept' class='dialogue'>I really don't have time for this.</button><br>"
+        },
+        "accept": {
+            "0": "Thank you sweet heart, I'll make it up to you, I promise.",
             "eventID": "oldMan"
         }
     },
     "franny3": {
         "greeting": {
             "0": "<p>*whew* Seems like the rush is finally over, hey look, someone left a comic book at one of the tables, take it if you want it.</p>",
-            "1": "<button id='greeting' class='dialogue'>Hey, thanks!</button><br>",
+            "1": "<button id='accept' class='dialogue'>Hey, thanks!</button><br>"
+        },
+        "accept": {
+            "0": "Thank you sweet heart, I'll make it up to you, I promise.",
             "eventID": "comic"
         }
     },

@@ -227,9 +227,9 @@
         "enemy": {
             "seagull": {
                 "name": "seagull",
-                "modifiesScene": "beach",
-                "modifiesIndex": "seagull",
-                "modifiesText": "A lifeless seagull lies at the end of a rock jetty. <span id='albatrossKilled' title='Cry of the Albatross' class='event'>You hear the terrible cry of The Great Albatross</span><br><br>",
+                "modifiesScene": ["beach"],
+                "modifiesIndex": ["seagull"],
+                "modifiesHtml": ["A lifeless seagull lies at the end of a rock jetty. <span id='albatrossKilled' title='Cry of the Albatross' class='event'>You hear the terrible cry of The Great Albatross</span><br><br>"],
                 "itemText": "The bird happily accepts the fish",
                 "itemModifies": "The seagull seems content. On closer inspection you discover it is actually a juvenile <span id='albatross' title='Albatross' class='character'>albatross</span>.<br><br>",
                 "item": "fish"
@@ -239,29 +239,29 @@
             "albatrossKilled": {
                 "triggered": false,
                 "id": "albatrossKilled",
-                "modifiesScene": "albatross",
-                "modifiesIndex": "title",
-                "modifiesHtml": "<h1 id='title' title='Title' class='info'>Albatross Killed</h1>",
-                "currentIndex": "seagull",
-                "currentHtml": "Above a distant horizon you spy a terrible albatross tacking to the wind.<br><br>"
+                "modifiesScene": ["albatross", "beach"],
+                "modifiesIndex": ["title", "seagull"],
+                "modifiesHtml": [
+                    "<h1 id='title' title='Title' class='info'>Albatross Killed</h1>", 
+                    "Above a distant horizon you spy a terrible albatross tacking to the wind.<br><br>"
+                ]
             },
             "albatrossLives": {
                 "triggered": false,
                 "id": "albatrossLives",
-                "modifiesScene": "albatross",
-                "modifiesIndex": "title",
-                "modifiesHtml": "<h1 id='title' title='Title' class='info'>Albatross Lives</h1>",
-                "currentIndex": "seagull",
-                "currentHtml": "Above a distant horizon you spy a great albatross tacking to the wind.<br><br>"
+                "modifiesScene": ["albatross", "beach"],
+                "modifiesIndex": ["title", "seagull"],
+                "modifiesHtml": [
+                    "<h1 id='title' title='Title' class='info'>Albatross Lives</h1>", 
+                    "Above a distant horizon you spy a great albatross tacking to the wind.<br><br>"
+                ]
             },
             "bigFish": {
                 "triggered": false,
                 "id": "bigFish",
-                "modifiesScene": "",
-                "modifiesIndex": "",
-                "modifiesHtml": "",
-                "currentIndex": "seagull",
-                "currentHtml": "Seeming pleased by you, the albatross presents you with a <span id='giantFish' title='Giant Fish' class='item'>giant fish</span><br><br>"
+                "modifiesScene": ["beach"],
+                "modifiesIndex": ["seagull"],
+                "modifiesHtml": ["Seeming pleased by you, the albatross presents you with a <span id='giantFish' title='Giant Fish' class='item'>giant fish</span><br><br>"]
             }
         },
         "inspect": {
@@ -275,10 +275,10 @@
             "fish": {
                 "id": "fish",
                 "interacted": true,
-                "modifiesScene": "beach",
-                "modifiesIndex": "fish",
+                "modifiesScene": ["beach"],
+                "modifiesIndex": ["fish"],
+                "modifiesHtml": ["After a brief struggle you finally reel in the <span id='fish' title='Fish' class='item'>fish</span><br><br>"],
                 "inspect": "This is a great time of year for fishing in these waters.",
-                "html": "After a brief struggle you finally reel in the <span id='fish' title='Fish' class='item'>fish</span><br><br>",  
                 "interactedText": "You need a fishing rod to catch fish.",
                 "item": "fishingRod"
             }
@@ -288,9 +288,9 @@
                 "id": "fishingRod",
                 "name": "Fishing Rod",
                 "single": false,
-                "modifiesScene": "beach",
-                "modifiesIndex": "fishingRod",
-                "html": "The sound of crashing waves soothes your soul. You feel that you are home.<br><br>",
+                "modifiesScene": ["beach"],
+                "modifiesIndex": ["fishingRod"],
+                "modifiesHtml": ["The sound of crashing waves soothes your soul. You feel that you are home.<br><br>"],
                 "item": false
             
             },
@@ -298,18 +298,18 @@
                 "id": "fish",
                 "name": "Fish",
                 "single": true,
-                "modifiesScene": "beach",
-                "modifiesIndex": "fish",
-                "html": "An endless placid ocean stretches out before you.<br><br>",
+                "modifiesScene": ["beach"],
+                "modifiesIndex": ["fish"],
+                "modifiesHtml": ["An endless placid ocean stretches out before you.<br><br>"],
                 "item": false
             },
             "giantFish": {
                 "id": "giantFish",
                 "name": "Giant Fish",
                 "single": true,
-                "modifiesScene": "beach",
-                "modifiesIndex": "seagull",
-                "html": "<span id='albatrossLives' title='The Albatross Lives' class='event'>You hear the victorious cry of The Great Albatross.</span><br><br>",
+                "modifiesScene": ["beach"],
+                "modifiesIndex": ["seagull"],
+                "modifiesHtml": ["<span id='albatrossLives' title='The Albatross Lives' class='event'>You hear the victorious cry of The Great Albatross.</span><br><br>"],
                 "item": false
             }
         
@@ -341,31 +341,25 @@
             "showPath": {
                 "triggered": false,
                 "id": "showPath",
-                "modifiesScene": "",
-                "modifiesIndex": "",
-                "modifiesHtml": "",
-                "currentIndex": "exit2",
-                "currentHtml": "To the North lies the <span id='forest' title='Forest Trail' class='exit'>trail</span> to the Seaside Forest.<br><br>",
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["exit2"],
+                "modifiesHtml": ["To the North lies the <span id='forest' title='Forest Trail' class='exit'>trail</span> to the Seaside Forest.<br><br>"],
                 "modifiesDialogue": true,
                 "newDialogue": "<button id='unlock' class='dialogue'>Any way you can help me defeat the monsters?</button><br>"
             },
             "unlockVan": {
                 "triggered": false,
                 "id": "unlockVan",
-                "modifiesScene": "",
-                "modifiesIndex": "",
-                "modifiesHtml": "",
-                "currentIndex": "van",
-                "currentHtml": "Looking through the unlocked van you discover a <span id='baseballBat' title='Baseball Bat' class='item'>baseball bat</span> amongst the falderall.<br><br>"
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["van"],
+                "modifiesHtml": ["Looking through the unlocked van you discover a <span id='baseballBat' title='Baseball Bat' class='item'>baseball bat</span> amongst the falderall.<br><br>"]
             },
             "repairAntennae": {
                 "triggered": false,
                 "id": "repairAntennae",
-                "modifiesScene": "",
-                "modifiesIndex": "",
-                "modifiesHtml": "",
-                "currentIndex": "antennae",
-                "currentHtml": "The light atop the <span id='fixedAntennae' title='Baseball Bat' class='info'>antennae</span> begins to blink. Jeff's radio plays a happy song.<br><br>"
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["antennae"],
+                "modifiesHtml": ["The light atop the <span id='fixedAntennae' title='Baseball Bat' class='info'>antennae</span> begins to blink. Jeff's radio plays a happy song.<br><br>"]
             }
         },
         "inspect": {
@@ -387,10 +381,10 @@
             "antennae": {
                 "id": "antennae",
                 "interacted": true,
-                "modifiesScene": "meadow",
-                "modifiesIndex": "antennae",
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["antennae"],
+                "modifiesHtml": ["You attach the new receiver to the antennae. <span id='antennaeRepaired' title='Repair the Antennae' class='event'>all that's left now is to power it up.</span>.<br><br>"],  
                 "inspect": "The antennae appears to be non-functioning, perhaps you could find something to get it working again",
-                "html": "You attach the new receiver to the antennae. <span id='antennaeRepaired' title='Repair the Antennae' class='event'>all that's left now is to power it up.</span>.<br><br>",  
                 "interactedText": "It seems the antennae receiver is broken",
                 "item": "receiver"
             }
@@ -400,54 +394,54 @@
                 "id": "baseballBat",
                 "name": "Baseball Bat",
                 "single": true,
-                "modifiesScene": "meadow",
-                "modifiesIndex": "van",
-                "html": "As you rummage through the van you find a dusty old <span id='hockeyStick' title='Hockey Stick' class='item'>hockey stick</span>.<br><br>",
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["van"],
+                "modifiesHtml": ["As you rummage through the van you find a dusty old <span id='hockeyStick' title='Hockey Stick' class='item'>hockey stick</span>.<br><br>"],
                 "item": false
             },
             "fireMagazine": {
                 "id": "fireMagazine",
                 "name": "Fire-Man Issue 1",
                 "single": true,
-                "modifiesScene": "meadow",
-                "modifiesIndex": "van",
-                "html": "Alongside the Magic Magazine is a copy of <span id='strikeMagazine' title='Strike of the Southern Cross #1' class='item'>Strike of the Southern Cross #1</span><br><br>",
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["van"],
+                "modifiesHtml": ["Alongside the Magic Magazine is a copy of <span id='strikeMagazine' title='Strike of the Southern Cross #1' class='item'>Strike of the Southern Cross #1</span><br><br>"],
                 "item": false
             },
             "hockeyStick": {
                 "id": "hockeyStick",
                 "name": "Hockey Stick",
                 "single": true,
-                "modifiesScene": "meadow",
-                "modifiesIndex": "van",
-                "html": "Underneath the hockey stick you spy a <span id='poolCue' title='Pool Cue' class='item'>pool cue</span>.<br><br>",
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["van"],
+                "modifiesHtml": ["Underneath the hockey stick you spy a <span id='poolCue' title='Pool Cue' class='item'>pool cue</span>.<br><br>"],
                 "item": false
             },
             "poolCue": {
                 "id": "poolCue",
                 "name": "Pool Cue",
                 "single": true,
-                "modifiesScene": "meadow",
-                "modifiesIndex": "van",
-                "html": "For good measure you should snag a <span id='potion' title='Potion' class='item'>potion</span> from an open box.<br><br>",
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["van"],
+                "modifiesHtml": ["For good measure you should snag a <span id='potion' title='Potion' class='item'>potion</span> from an open box.<br><br>"],
                 "item": false
             },
             "potion": {
                 "id": "potion",
                 "name": "Potion",
                 "single": true,
-                "modifiesScene": "meadow",
-                "modifiesIndex": "van",
-                "html": "Rifling through what's left in the van you discover a beat up copy of <span id='fireMagazine' title='Fire-Man #1' class='item'>Fire-Man #1</span>!<br><br>",
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["van"],
+                "modifiesHtml": ["Rifling through what's left in the van you discover a beat up copy of <span id='fireMagazine' title='Fire-Man #1' class='item'>Fire-Man #1</span>!<br><br>"],
                 "item": false
             },
             "strikeMagazine": {
                 "id": "strikeMagazine",
                 "name": "Strike of the Southern Cross Issue 1",
                 "single": true,
-                "modifiesScene": "meadow",
-                "modifiesIndex": "van",
-                "html": "There is an old <span id='van' title='Van' class='info'>van</span> parked in the shade.<br><br>",
+                "modifiesScene": ["meadow"],
+                "modifiesIndex": ["van"],
+                "modifiesHtml": ["There is an old <span id='van' title='Van' class='info'>van</span> parked in the shade.<br><br>"],
                 "item": false
             }
         }
@@ -477,36 +471,36 @@
         "enemy": {
             "slime": {
                 "name": "slime",
-                "modifiesScene": "forest",
-                "modifiesIndex": "slime",
-                "modifiesText": "Still smiling, the slime presents you with a <span id='potion1' title='Potion' class='item'>potion</span> before hopping ahead down the trail.<br><br>",
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["slime"],
+                "modifiesHtml": ["Still smiling, the slime presents you with a <span id='potion1' title='Potion' class='item'>potion</span> before hopping ahead down the trail.<br><br>"],
                 "itemText": "",
                 "itemModifies": "",
                 "item": false
             },
             "frostWizard": {
                 "name": "frostWizard",
-                "modifiesScene": "forest",
-                "modifiesIndex": "wizard",
-                "modifiesText": "Rifling through his robes and pouches, the wizard produces a  <span id='potion4' title='Potion' class='item'>potion</span> and hands it to you.<br><br>",
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["wizard"],
+                "modifiesHtml": ["Rifling through his robes and pouches, the wizard produces a  <span id='potion4' title='Potion' class='item'>potion</span> and hands it to you.<br><br>"],
                 "itemText": "",
                 "itemModifies": "",
                 "item": false
             },
             "goblin": {
                 "name": "goblin",
-                "modifiesScene": "forest",
-                "modifiesIndex": "goblin",
-                "modifiesText": "The goblin looks dejected as it sneaks off back into the swamp. You find a <span id='potion3' title='Potion' class='item'>potion</span> in the copse of trees.<br><br>",
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["goblin"],
+                "modifiesHtml": ["The goblin looks dejected as it sneaks off back into the swamp. You find a <span id='potion3' title='Potion' class='item'>potion</span> in the copse of trees.<br><br>"],
                 "itemText": "",
                 "itemModifies": "",
                 "item": false
             },
             "torteese": {
                 "name": "torteese",
-                "modifiesScene": "forest",
-                "modifiesIndex": "torteese",
-                "modifiesText": "As the torteese slowly ambles off into the trees you see that it left behind a <span id='potion2' title='Potion' class='item'>potion</span>!<br><br>",
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["torteese"],
+                "modifiesHtml": ["As the torteese slowly ambles off into the trees you see that it left behind a <span id='potion2' title='Potion' class='item'>potion</span>!<br><br>"],
                 "itemText": "",
                 "itemModifies": "",
                 "item": false
@@ -516,66 +510,71 @@
             "slimeEvent": {
                 "triggered": false,
                 "id": "slimeDefeated",
-                "modifiesScene": "forest",
-                "modifiesIndex": "torteese",
-                "modifiesHtml": "In a clearing stands a giant <span id='torteese' title='Torteese' class='enemy'>torteese</span>, it does not look happy to see you.<br><br>",
-                "currentIndex": "slime",
-                "currentHtml": "The songs of birds welcome you to the Seaside Forest. Stunted trees stand among a leafy underbrush.<br><br>",
+                "modifiesScene": ["forest", "forest"],
+                "modifiesIndex": ["torteese", "slime"],
+                "modifiesHtml": [
+                    "In a clearing stands a giant <span id='torteese' title='Torteese' class='enemy'>torteese</span>, it does not look happy to see you.<br><br>",
+                    "The songs of birds welcome you to the Seaside Forest. Stunted trees stand among a leafy underbrush.<br><br>"
+                ],
                 "modifiesDialogue": false,
                 "newDialogue": ""
             },
             "goblinEvent": {
                 "triggered": false,
                 "id": "slimeDefeated",
-                "modifiesScene": "forest",
-                "modifiesIndex": "wizard",
-                "modifiesHtml": "Finally, towards the end of the trail a menacing <span id='frostWizard' title='Frost Wizard' class='enemy'>Frost Wizard</span> stands defiantly.<br><br>",
-                "currentIndex": "goblin",
-                "currentHtml": "You swat away mosquitos as you make your way through a swampy section of forest.<br><br>",
+                "modifiesScene": ["forest", "forest"],
+                "modifiesIndex": ["wizard", "goblin"],
+                "modifiesHtml": [
+                    "Finally, towards the end of the trail a menacing <span id='frostWizard' title='Frost Wizard' class='enemy'>Frost Wizard</span> stands defiantly.<br><br>",
+                    "You swat away mosquitos as you make your way through a swampy section of forest.<br><br>"
+                ],
                 "modifiesDialogue": false,
                 "newDialogue": ""
             },
             "torteeseEvent": {
                 "triggered": false,
                 "id": "slimeDefeated",
-                "modifiesScene": "forest",
-                "modifiesIndex": "goblin",
-                "modifiesHtml": "As you make your way through a dark and damp section of The Seaside Forest a <span id='goblin' title='Goblin' class='enemy'>goblin</span> jumps out from behind a copse of trees.<br><br>",
-                "currentIndex": "torteese",
-                "currentHtml": "You feel at peace in a clearing somewhere in the middle of the forest.<br><br>",
+                "modifiesScene": ["forest", "forest"],
+                "modifiesIndex": ["goblin", "torteese"],
+                "modifiesHtml": [
+                    "As you make your way through a dark and damp section of The Seaside Forest a <span id='goblin' title='Goblin' class='enemy'>goblin</span> jumps out from behind a copse of trees.<br><br>",
+                    "You feel at peace in a clearing somewhere in the middle of the forest.<br><br>"
+                ],
                 "modifiesDialogue": false,
                 "newDialogue": ""
             },
             "wizardEvent": {
                 "triggered": false,
                 "id": "wizardDefeated",
-                "modifiesScene": "forest",
-                "modifiesIndex": "exit2",
-                "modifiesHtml": "As you approach the <span id='town' title='Town' class='exit'>exit</span> to town, you hear the hum of a car making it's way down the motorway.<br><br>",
-                "currentIndex": "wizard",
-                "currentHtml": "Close to the forest exit <span id='frostWizard' title='Frost Wizard' class='character'>The Frost Wizard</span> sits atop a stump deep in thought.<br><br>",
+                "modifiesScene": ["forest", "forest"],
+                "modifiesIndex": ["exit2", "wizard"],
+                "modifiesHtml": [
+                    "As you approach the <span id='town' title='Town' class='exit'>exit</span> to town, you hear the hum of a car making it's way down the motorway.<br><br>",
+                    "Close to the forest exit <span id='frostWizard' title='Frost Wizard' class='character'>The Frost Wizard</span> sits atop a stump deep in thought.<br><br>"
+                ],
                 "modifiesDialogue": false,
                 "newDialogue": ""
             },
             "blizzardWizard": {
                 "triggered": false,
                 "id": "blizzardWizard",
-                "modifiesScene": "forest",
-                "modifiesIndex": "slimeGarden",
-                "modifiesHtml": "Close to the forest entrance you discover a bubbling freshwater spring <span id='slime' title='Slime' class='enemy'>slimes</span> splash about the puddles.<br><br>",
-                "currentIndex": "wizard",
-                "currentHtml": "Close to the forest exit <span id='frostWizard' title='Frost Wizard' class='character'>Cryan the Blizzard Wizard</span> sits atop a stump deep in thought.<br><br>",
+                "modifiesScene": ["forest", "forest"],
+                "modifiesIndex": ["slimeGarden", "wizard"],
+                "modifiesHtml": [
+                    "Close to the forest entrance you discover a bubbling freshwater spring <span id='slime' title='Slime' class='enemy'>slimes</span> splash about the puddles.<br><br>",
+                    "Close to the forest exit <span id='frostWizard' title='Frost Wizard' class='character'>Cryan the Blizzard Wizard</span> sits atop a stump deep in thought.<br><br>"
+                ],
                 "modifiesDialogue": true,
                 "newDialogue": "<button id='wizards' class='dialogue'>What can you tell me about wizards?</button><br>"
             },
             "wizardTower": {
                 "triggered": false,
                 "id": "wizardTower",
-                "modifiesScene": "",
-                "modifiesIndex": "",
-                "modifiesHtml": "",
-                "currentIndex": "wizardTower",
-                "currentHtml": "Far off in the distance the pinnacle of <span id='wizardTower' title='Wizard Tower' class='info'>The Wizard's Tower</span> rises above the treetops.<br><br>",
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["wizardTower"],
+                "modifiesHtml": [
+                    "Far off in the distance the pinnacle of <span id='wizardTower' title='Wizard Tower' class='info'>The Wizard's Tower</span> rises above the treetops.<br><br>"
+                ],
                 "modifiesDialogue": true,
                 "newDialogue": "<button id='wizardTower' class='dialogue'>The Wizard's Tower? What's that?</button><br>"
             }
@@ -597,36 +596,44 @@
                 "id": "potion",
                 "name": "Potion",
                 "single": true,
-                "modifiesScene": "forest",
-                "modifiesIndex": "slime",
-                "html": "<span id='slimeEvent' title='Slime Defeated' class='event'>Having defeated the slime you decide to move further into the forest.</span><br><br>",
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["slime"],
+                "modifiesHtml": [
+                    "<span id='slimeEvent' title='Slime Defeated' class='event'>Having defeated the slime you decide to move further into the forest.</span><br><br>"
+                ],
                 "item": false
             },
             "potion2": {
                 "id": "potion",
                 "name": "Potion",
                 "single": true,
-                "modifiesScene": "forest",
-                "modifiesIndex": "torteese",
-                "html": "<span id='torteeseEvent' title='Torteese Defeated' class='event'>Having defeated the torteese you decide to move further into the forest.</span><br><br>",
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["torteese"],
+                "modifiesHtml": [
+                    "<span id='torteeseEvent' title='Torteese Defeated' class='event'>Having defeated the torteese you decide to move further into the forest.</span><br><br>"
+                ],
                 "item": false
             },
             "potion3": {
                 "id": "potion",
                 "name": "Potion",
                 "single": true,
-                "modifiesScene": "forest",
-                "modifiesIndex": "goblin",
-                "html": "<span id='goblinEvent' title='Goblin Defeated' class='event'>With no sign of additional goblins in sight you decide to press on.</span><br><br>",
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["goblin"],
+                "modifiesHtml": [
+                    "<span id='goblinEvent' title='Goblin Defeated' class='event'>With no sign of additional goblins in sight you decide to press on.</span><br><br>"
+                ],
                 "item": false
             },
             "potion4": {
                 "id": "potion",
                 "name": "Potion",
                 "single": true,
-                "modifiesScene": "forest",
-                "modifiesIndex": "wizard",
-                "html": "<span id='wizardEvent' title='Wizard Defeated' class='event'>Seeming placid you thank the wizard for the potion and head to town.</span><br><br>",
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["wizard"],
+                "modifiesHtml": [
+                    "<span id='wizardEvent' title='Wizard Defeated' class='event'>Seeming placid you thank the wizard for the potion and head to town.</span><br><br>"
+                ],
                 "item": false
             }
         }
@@ -759,66 +766,67 @@
             "cyberEvent": {
                 "triggered": false,
                 "id": "cyberEvent",
-                "modifiesScene": "ahabs",
-                "modifiesIndex": "franny",
-                "modifiesHtml": "Easing up a bit, the <span id='franny2' class='character'>Waitress</span> stands with her arms crossed.<br><br>",
-                "currentIndex": "booth",
-                "currentHtml": "The <span id='cyberpunks' class='character'>Cyberpunks</span>, occupying their usual booth, are consumed by their decks.<br><br>",
+                "modifiesScene": ["ahabs", "ahabs"],
+                "modifiesIndex": ["franny", "booth"],
+                "modifiesHtml": [
+                    "Easing up a bit, the <span id='franny2' class='character'>Waitress</span> stands with her arms crossed.<br><br>", 
+                    "The <span id='cyberpunks' class='character'>Cyberpunks</span>, occupying their usual booth, are consumed by their decks.<br><br>"
+                ],
                 "modifiesDialogue": false,
                 "newDialogue": ""
             },
             "comic": {
                 "triggered": false,
                 "id": "comic",
-                "modifiesScene": "ahabs",
-                "modifiesIndex": "franny",
-                "modifiesHtml": "Easing up a bit, the <span id='franny' class='character'>Waitress</span> stands with her arms crossed.<br><br>",
-                "currentIndex": "table",
-                "currentHtml": "Seems someone left behind an issue of <span id='blizzardMagazine' class='item'>The Adventures of Cryan #1</span> at the table.<br><br>",
+                "modifiesScene": ["ahabs", "ahabs"],
+                "modifiesIndex": ["franny", "table"],
+                "modifiesHtml": [
+                    "Easing up a bit, the <span id='franny' class='character'>Waitress</span> stands with her arms crossed.<br><br>", 
+                    "Seems someone left behind an issue of <span id='blizzardMagazine' class='item'>The Adventures of Cryan #1</span> at the table.<br><br>"
+                ],
                 "modifiesDialogue": false,
                 "newDialogue": ""
             },
             "finallyFranny": {
                 "triggered": false,
                 "id": "finallyFranny",
-                "modifiesScene": "",
-                "modifiesIndex": "",
-                "modifiesHtml": "",
-                "currentIndex": "franny",
-                "currentHtml": "Wiping sweat from her brow, it seems <span id='franny' class='character'>Franny Dee</span> is finally relaxed.<br><br>",
+                "modifiesScene": ["ahabs"],
+                "modifiesIndex": ["franny"],
+                "modifiesHtml": [
+                    "Wiping sweat from her brow, it seems <span id='franny' class='character'>Franny Dee</span> is finally relaxed.<br><br>"
+                ],
                 "modifiesDialogue": true,
                 "newDialogue": "<button id='town' class='dialogue'>What can you tell me about this town?</button><br>"
             },
             "foodTray": {
                 "triggered": false,
                 "id": "foodTray",
-                "modifiesScene": "",
-                "modifiesIndex": "",
-                "modifiesHtml": "",
-                "currentIndex": "booth",
-                "currentHtml": "Franny hands you a <span id='foodTray' class='item'>big tray of piping hot hamburgers and ice cold milkshakes.</span><br><br>",
+                "modifiesScene": ["ahabs"],
+                "modifiesIndex": ["booth"],
+                "modifiesHtml": ["Franny hands you a <span id='foodTray' class='item'>big tray of piping hot hamburgers and ice cold milkshakes.</span><br><br>"],
                 "modifiesDialogue": false,
                 "newDialogue": ""
             },
             "oldMan": {
                 "triggered": false,
                 "id": "oldMan",
-                "modifiesScene": "",
-                "modifiesIndex": "",
-                "modifiesHtml": "",
-                "currentIndex": "oldMan",
-                "currentHtml": "At the counter an <span id='oldMan' class='character'>old man</span> sits with his fingers crossed, meditating patiently as he waits for his food.</span><br><br>",
+                "modifiesScene": ["ahabs"],
+                "modifiesIndex": ["oldMan"],
+                "modifiesHtml": [
+                    "At the counter an <span id='oldMan' class='character'>old man</span> sits with his fingers crossed, meditating patiently as he waits for his food.</span><br><br>"
+                ],
                 "modifiesDialogue": false,
                 "newDialogue": ""
             },
             "oldMan2": {
                 "triggered": false,
                 "id": "oldMan",
-                "modifiesScene": "ahabs",
-                "modifiesIndex": "franny",
-                "modifiesHtml": "Wiping sweat from her brow, it seems the <span id='franny3' class='character'>Waitress</span> is finally relaxed.<br><br>",
-                "currentIndex": "oldMan",
-                "currentHtml": "At the counter an <span id='oldMan' class='character'>Willard</span> sits with his fingers crossed, reading a newspaper as he eats his food.</span><br><br>",
+                "modifiesScene": ["ahabs", "ahabs"],
+                "modifiesIndex": ["franny", "oldMan"],
+                "modifiesHtml": [
+                    "Wiping sweat from her brow, it seems the <span id='franny3' class='character'>Waitress</span> is finally relaxed.<br><br>", 
+                    "At the counter an <span id='oldMan' class='character'>Willard</span> sits with his fingers crossed, reading a newspaper as he eats his food.</span><br><br>"
+                ],
                 "modifiesDialogue": true,
                 "newDialogue": "<button id='oldMan' class='dialogue'>So, what can you tell me about yourself</span><br>"
             }
@@ -837,10 +845,12 @@
             "cyberpunks": {
                 "id": "cyberpunks",
                 "interacted": true,
-                "modifiesScene": "ahabs",
-                "modifiesIndex": "booth",
+                "modifiesScene": ["ahabs"],
+                "modifiesIndex": ["booth"],
+                "modifiesHtml": [
+                    "<span id='cyberEvent' class='event'>Looking pleased the Cyberpunks chat noisily over their meal, you should go back to Franny.</span><br><br>"
+                ],  
                 "inspect": "They look at you sideways as you approach.",
-                "html": "<span id='cyberEvent' class='event'>Looking pleased the Cyberpunks chat noisily over their meal, you should go back to Franny.</span><br><br>",  
                 "interactedText": "Go ahead, hand them the food tray.",
                 "item": "foodTray"
             }
@@ -850,18 +860,22 @@
                 "id": "foodTray",
                 "name": "Food Tray",
                 "single": true,
-                "modifiesScene": "ahabs",
-                "modifiesIndex": "booth",
-                "html": "At a booth in the corner a bunch of <span id='cyberpunks' class='object'>Cyberpunks</span> sit waiting impatiently for their food.<br><br>",
+                "modifiesScene": ["ahabs"],
+                "modifiesIndex": ["booth"],
+                "modifiesHtml": [
+                    "At a booth in the corner a bunch of <span id='cyberpunks' class='object'>Cyberpunks</span> sit waiting impatiently for their food.<br><br>"
+                ],
                 "item": false
             },
             "blizzardMagazine": {
                 "id": "blizzardMagazine",
                 "name": "The Adventures of Cryan #1",
                 "single": true,
-                "modifiesScene": "ahabs",
-                "modifiesIndex": "table",
-                "html": "The jukebox in the corner is playing oldies.<br><br>",
+                "modifiesScene": ["ahabs"],
+                "modifiesIndex": ["table"],
+                "modifiesHtml": [
+                    "The jukebox in the corner is playing your favorite song.<br><br>"
+                ],
                 "item": false
             }
         }
@@ -936,9 +950,11 @@
                 "id": "potion",
                 "name": "Potion",
                 "single": true,
-                "modifiesScene": "neptunes",
-                "modifiesIndex": "potion",
-                "html": "A statuette of <span id='broker' class='info'>The Broker</span> stands out among the shelves of figurines.<br><br>",
+                "modifiesScene": ["neptunes"],
+                "modifiesIndex": ["potion"],
+                "modifiesHtml": [
+                    "A statuette of <span id='broker' class='info'>The Broker</span> stands out among the shelves of figurines.<br><br>"
+                ],
                 "item": false
             }
         }

@@ -244,7 +244,7 @@ $("#canvas").on('click', '.event', function(e){
     clickSource = e.target.id;
     $("#actionBar").html("");
     triggerEvent();
-    getInspect();
+    //getInspect();
 });
 $( "#canvas" ).on('click', '.exit', function(e){
     clickSource = e.target.id;
@@ -697,7 +697,8 @@ function endBattle(){
 
     }
     $("#addActions").append("</p><button id='exitButton'>Exit</button>");
-    modifyScene(currentScene["enemy"][clickSource]["modifiesScene"], currentScene['enemy'][clickSource]["modifiesIndex"], currentScene["enemy"][clickSource]["modifiesText"]);
+    var defeatedEnemy = currentScene["enemy"][clickSource];
+    modifyScene(defeatedEnemy["modifiesScene"], defeatedEnemy["modifiesIndex"], defeatedEnemy["modifiesHtml"]);
     showScene();
     $("#inspect").html("");
 }
@@ -744,11 +745,10 @@ $("#addOptions").on('click', '.dialogue', function(e){
         var event = currentScene['event'][character[e.target.id]['eventID']];
         if (!event["triggered"]){
             modifyScene(event["modifiesScene"], event["modifiesIndex"], event["modifiesHtml"]);
-            modifyScene(sceneName, event["currentIndex"], event["currentHtml"]);
+            //modifyScene(sceneName, event["currentIndex"], event["currentHtml"]);
             modifyDialogue(event);
             event["triggered"] = true;
         }
-        
     }
     $("#addScreen").append("<p><b>" + player.name + ":</b></p><p>" + e.target.textContent + "</p>");
     displayDialogue(character[e.target.id]);
@@ -927,7 +927,7 @@ function triggerEvent(){
     var event = currentScene["event"][clickSource];
     if (!event["triggered"]){
         modifyScene(event["modifiesScene"], event["modifiesIndex"], event["modifiesHtml"]);
-        modifyScene(sceneName, event["currentIndex"], event["currentHtml"])
+        //modifyScene(sceneName, event["currentIndex"], event["currentHtml"])
         event['triggered'] = true;
         showScene();
     }
@@ -937,8 +937,9 @@ function triggerEvent(){
 
 function getInteract(){
     $("#inspect").html(currentScene["interact"][clickSource]);
+    var interactable = currentScene["interact"][clickSource];
     if (currentScene["interact"][clickSource]["modifiesScene"] && !currentScene["interact"][clickSource]["interacted"]){
-        modifyScene(currentScene["interact"][clickSource]["modifiesScene"], currentScene["interact"][clickSource]["modifiesIndex"], currentScene["interact"][clickSource]["html"]);
+        modifyScene(interactable["modifiesScene"], interactable["modifiesIndex"], interactable["modifiesHtml"]);
         showScene();
         sceneArray[sceneIndex]["interact"][clickSource]["interacted"] = true;
         $("#inspect").html(currentScene["interact"][clickSource]["inspect"]);
@@ -1015,7 +1016,8 @@ $("#useScreen").on('click', '.character', function(e){
 $("#useScreen").on('click', '.enemy', function(e){
     if (selectedItem["id"] === currentScene["enemy"][e.target.id]["item"]){
         $("#inspect").html(selectedItem["onUse"]);
-        modifyScene(currentScene["enemy"][e.target.id]["modifiesScene"], currentScene["enemy"][e.target.id]["modifiesIndex"], currentScene["enemy"][e.target.id]["itemModifies"]);
+        var currentEnemy = currentScene["enemy"][e.target.id];
+        modifyScene(currentEnemy["modifiesScene"], currentEnemy["modifiesIndex"], currentEnemy["itemModifies"]);
         showScene();
         if (selectedItem["singleUse"]){
             decrementItem();
@@ -1035,7 +1037,8 @@ $("#useScreen").on('click', '.item', function(e){
 $("#useScreen").on('click', '.object', function(e){
     if (selectedItem["id"] === currentScene["interact"][e.target.id]["item"]){
         $("#inspect").html(selectedItem["onUse"]);
-        modifyScene(currentScene["interact"][e.target.id]["modifiesScene"], currentScene["interact"][e.target.id]["modifiesIndex"], currentScene["interact"][e.target.id]["html"]);
+        var interactable = currentScene["interact"][e.target.id];
+        modifyScene(interactable["modifiesScene"], interactable["modifiesIndex"], interactable["modifiesHtml"]);
         showScene();
         if (selectedItem["singleUse"]){
             decrementItem();
@@ -1135,7 +1138,7 @@ function getItem(){
     console.log(currentScene["item"]);
     console.log(clickSource);
     $("#inspect").html("You pick up " + currentItem["name"]);
-    modifyScene(currentItem["modifiesScene"], currentItem["modifiesIndex"], currentItem["html"]);
+    modifyScene(currentItem["modifiesScene"], currentItem["modifiesIndex"], currentItem["modifiesHtml"]);
     showScene();
     index = hasItem(clickSource);
     if (index === false){
@@ -1207,10 +1210,15 @@ function useItem(){
 // scene.js
 
 function modifyScene(sceneID, lineID, appendText){
-    for(const key in sceneArray){
+    /*for(const key in sceneID){
         if (sceneArray[key]["sceneName"] == sceneID){
             sceneArray[key]["html"][lineID] = appendText;   
         }
+    }*/
+    for (let i = 0; i < Object.keys(sceneID).length; i++){
+        console.log(sceneArray[sceneID[i]]["html"][lineID[i]]);
+        sceneArray[sceneID[i]]["html"][lineID[i]] = "";
+        sceneArray[sceneID[i]]["html"][lineID[i]] = appendText[i];
     }
 }
 
