@@ -1,0 +1,196 @@
+{
+    "albatross": {
+        "greeting": {
+            "0": "*squawk squawk* I am the progeny of The Great Albatross.",
+            "1": "<button id='albatross' class='dialogue'>The Great Albatross?</button><br>"
+        },
+        "albatross": {
+            "0": "*squawk squawk* The Great Albatross knows all.",
+            "1": "<button id='event' class='dialogue'>Much Mahalos to The Great Albatross</button><br>",
+            "2": "<button id='end' class='dialogue'>That albatross don't seem so great.</button><br>"
+        },
+        "event": {
+            "0": "*squawk squawk* You are truly awakened, please offer this giant fish up to my father should you see him. May he bless you with his divine auspices.",
+            "eventID": "bigFish"
+        },
+        "end": {
+            "0": "*squawk squawk* You exist in a state of ignorance, there is no getting through to you."
+        }
+    },
+    "cyberpunks": {
+        "greeting": {
+            "0": "*without taking his eyes off his deck* What do you want?"
+        }
+    },
+    "franny": {
+        "greeting": {
+            "0": "How can I help you today?",
+            "1": "<button id='franny' class='dialogue'>What can you tell me about yourself?</button><br>",
+            "eventID": "finallyFranny"
+        },
+        "franny": {
+            "0": "Well, my name is Franny Dee, I've been working here since I was a teenager. I know almost everyone in town, and I've never seen you before.",
+            "1": "<button id='greeting' class='dialogue'>Pleased to meet you Franny!</button>"
+        },
+        "town": {
+            "0": "Oh, I don't know. This town is really weird. First of all, it doesn't have a name, it 'goes by many names'. And then there's the cyberpunks and wizards running around. Oh, I don't know, don't get me started on The Witch House.",
+            "1": "<button id='name' class='dialogue'>Tell me more about the town's name.</button><br>",
+            "2": "<button id='cyber' class='dialogue'>Cyberpunks! Wizards!</button><br>",
+            "3": "<button id='house' class='dialogue'>The Witch House?</button><br>",
+            "4": "<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "name": {
+            "0": "People call the town by many names but nobody can quite agree on what the name really is. At the town's founding the debate around the town's name was so fierce that a small battle was drawn between the debating factions, in the ensuing battle over 33 men lost their lives. The town has remained Unnamed ever since.",
+            "1": "<button id='town' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "cyber": {
+            "0": "Oh, you know, cyberpunk is the latest trend, but it truly is a massive movement. A lot of kids and even adults are absolutely sucked into these technologies. On the other hand, the wizards cannot stand the cyberpunks. The wizards claim the cyberpunks are using a forbidden form of dark sorcery in their devices, meanwhile the cyberpunks contend that the wizards are out of touch old-timer know-nothings.",
+            "1": "<button id='town' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "house": {
+            "0": "The Witch House? Just outside of town? I figured you were here after you saw that movie they made about it. It's not really a tourist attraction. There's a bunch of messed up urban legends about it. I've never been there myself, locals know to stay away.",
+            "1": "<button id='town' class='dialogue'>Let's talk about something else.</button><br>"
+        }
+    },
+    "franny1": {
+        "greeting": {
+            "0": "<p>Hey! Can't you see that we're busy here!? Be a doll and run this tray of food over to those kids in the corner!</p>",
+            "1": "<button id='greeting' class='dialogue'>Okay, sounds like I don't have any other choice.</button><br>",
+            "eventID": "foodTray"
+        }
+    },
+    "franny2": {
+        "greeting": {
+            "0": "<p>Okay, can you do something else for me? See that man at the counter? He's a regular, been coming for years, could you please go over and let him know his food is on the way?</p>",
+            "1": "<button id='greeting' class='dialogue'>Okay, sounds like I don't have any other choice.</button><br>",
+            "eventID": "oldMan"
+        }
+    },
+    "franny3": {
+        "greeting": {
+            "0": "<p>*whew* Seems like the rush is finally over, hey look, someone left a comic book at one of the tables, take it if you want it.</p>",
+            "1": "<button id='greeting' class='dialogue'>Hey, thanks!</button><br>",
+            "eventID": "comic"
+        }
+    },
+    "oldMan": {
+        "greeting": {
+            "0": "<p>Hello, young man, my name is Willard, how are you today?</p>",
+            "1": "<button id='greeting' class='dialogue'>Hello sir, I just came to tell you that you're food is on the way.</button><br>",
+            "eventID": "oldMan2"
+        }
+    },
+    "frostWizard": {
+        "greeting": {
+            "0": "*whew* I'm bushed, you are quite proficient in magic my young friend.",
+            "1": "<button id='blizzardWizard' class='dialogue'>Is it alright if I call you The Blizzard Wizard?</button><br>"
+        },
+        "blizzardWizard": {
+            "0": "I would really prefer if you would not call me The Blizzard Wizard. My true name is known to no man, but you can call me Cryan.",
+            "1": "<button id='greeting' class='dialogue'>Cryan? Rhymes with Brian, but could also mean you're crying.</button><br>",
+            "eventID": "blizzardWizard"
+        },
+        "wizards": {
+            "0": "We wizards have been in this world since the start. We exist alongside the civilization you know so well guiding the humans towards their ultimate destiny.",
+            "1": "<button id='destiny' class='dialogue'>Our ultimate destiny?</button><br>",
+            "2": "<button id='evil' class='dialogue'>Are you good or bad?</button><br>"
+        },
+        "destiny": {
+            "0": "The fate of your species is unknown, even to us. We are simply the hand that guides you to the end.",
+            "1": "<button id='evil' class='dialogue'>Are you good or bad?</button><br>",
+            "2": "<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "evil": {
+            "0": "Some wizards are good and others are evil. The wizards of The Wizards Tower are of the evil sort. I myself am somewhere in between.",
+            "1": "<button id='destiny' class='dialogue'>Our ultimate destiny?</button><br>",
+            "2": "<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>",
+            "eventID": "wizardTower"
+        },
+        "wizardTower": {
+            "0": "The Wizard's Tower has been the stronghold of the dark wizards since time immemorial. None know of the heinous dark arts performed within. None who enter ever exit, and those who abide there always remain within it's confines.",
+            "1": "<button id='greeting' class='dialogue'>I'm shook, let's talk about something else.</button><br>"
+        }
+    },
+    "jeffChurch": {
+        "greeting": {
+            "0": "Hello friend, my name is Jeff. Did you pass out on the beach? Not the first time I've seen a guy like you pass through here.",
+            "1": "<button id='exit' class='dialogue'>Where am I?</button><br>",
+            "2": "<button id='combat' class='dialogue'>What can you tell me about combat?</button><br>",
+            "3": "<button id='items' class='dialogue'>What can you tell me about items?</button><br>",
+            "4": "<button id='world' class='dialogue'>What can you tell me of the World?</button><br>"
+        },
+        "combat": {
+            "0": "Personally I'm a pacifist, but I do know a little bit about combat. Battles are turn-based and if you don't know what that means at this point I don't think I can help you.",
+            "1": "<button id='affinity' class='dialogue'>Of course I can turn-based battle, but isn't it more complicated than that?</button><br>"
+        },
+        "affinity": {
+            "0": "Well, every weapon has type ratings and each enemy has corresponding defenses. The type ratings are <b>Blunt (B)</b>, <b>Edged (E)</b>, and <b>Piercing (P)</b> you will want to inspect every enemy to determine it's defensive ratings against the various weapon types and gear yourself accordingly. Also, don't worry, inspecting enemies and changing equipment do not waste turns so be sure to use them as much as you'd like.",
+            "1": "<button id='magic' class='dialogue'>Interesting, anything else?</button><br>"
+        },
+        "magic": {
+            "0": "Magic spells and skills are learned by reading comics and magazines, these can be found in the world or purchased from shops. Each magic spell has an affinity and does elemental type based damage. I can't remember where I've heard something like that before but it's familiar, right?",
+            "1": "<button id='rage' class='dialogue'>Yeah I think I've heard that one before.</button><br>"
+        },
+        "rage": {
+            "0": "One last thing, using physical attacks will increase your <b>RAGE</b>, RAGE is neccessary to use skills, but be careful if your rage gets high it will have unwanted consequences. Similarly, casting spells will decrease your <b>Sanity</b>, you will need items to keep your sanity in check as you cast more spells, don't want to lose it, do you?",
+            "1": "<button id='greeting' class='dialogue'>I'll try to remember all that, thank you.</button><br>"
+        },
+        "exit": {
+            "0": "This is the beach meadow, I have been living here for many years. There is a path to town to the North. You'll have to walk through the Seaside Forest to get to town, some nasty monsters in there.",
+            "1": "<button id='greeting' class='dialogue'>I guess I will have to head to town, not really sure where I am.</button><br>",
+            "eventID": "showPath"
+        },
+        "items": {
+            "0": "Items are split up into three classes: <b class='consumable'>consumable</b>, <b class='usable'>usable</b>, and <b class='equip'>equipable</b>. Consumables are items that can be used to recover stats, heal, and learn spells or skills. <b>Usable</b> items can be used on targets in the world to trigger events and unlock new parts of the game. <b>Equipable</b> items work exactly how they sound, they can be equipped to modify stats like attack and defense.",
+            "1": "<button id='greeting' class='dialogue'>Simple! What else?</button><br>"
+        },
+        "world": {
+            "0": "Strange tidings greet the world these days. Strange lights in the sky at night, monsters in the forests becoming aggressive. The wizards are planning something, I know it. I wish I could get more information but I'm not getting anything on the radio today. I think there's something wrong with the antennae.",
+            "1": "<button id='world2' class='dialogue'>Thank you for the exposition, but I'm looking for more functional information.</button><br>"
+        },
+        "world2": {
+            "0": "The World is populated by a few classes of interactables: <b class='info'>Info</b> nodes are not interactive but will reveal additional information about the world upon inspection, <b class='object'>objects</b> are interactable items that modify scenes revealing new paths and items, sometimes objects will require an additional usable item to work, <b class='item'>items</b> can also be found which can be picked up and added to the inventory, <b class='enemy'>enemies</b> are targets which can be fought to advance the story and gain experience and additional items, lastly <b class='character'>characters</b> such as myself can be talked to, conversations reveal important information and advance the story so be sure to talk to everyone you meet!",
+            "1": "<button id='greeting' class='dialogue'>Got it! What else?</button><br>"
+        },
+        "unlock": {
+            "0": "There's some stuff in my van you could use, feel free to take a look.",
+            "eventID": "unlockVan"
+        }
+    },
+    "sherm": {
+        "greeting": {
+            "0": "<p>Hi there, my name is Matt, but everyone around here calls me The Shermanator.</p>",
+            "1": "<button id='nice' class='dialogue'>Nice to meet you Matt, anything you can tell me about the comics here?</button><br>",
+            "2": "<button id='matt' class='dialogue'>What can you tell me about yourself?</button>"
+        },
+        "nice": {
+            "0": "<p>Sure, we sell comics of all kinds, fantasy comics like Office-Man are all the rage right now. People need an escape given everything going on in the world.</p>",
+            "1": "<button id='benefits' class='dialogue'>Interesting, are there any benefits to reading comics?</button><br>"
+        },
+        "benefits": {
+            "0": "<p>Yes! Reading comics teaches you a lot about the world, you can even learn valuable skills and spells from reading comics.</p>",
+            "1": "<button id='greeting' class='dialogue'>Cool, I'll be sure to buy some before I head out!</button><br>"
+        },
+        "matt": {
+            "0": "<p>I'm a pretty regular guy. I love reading comics and wearing shorts. I like shorts! They're comfy and easy to wear!</p>",
+            "1": "<button id='greeting' class='dialogue'>Shorts are the best!</button><br>"
+        }
+    },
+    "name": {
+        "greeting": {
+            "0": "<p>Hello I am Name.</p>",
+            "1": "<button id='nice' class='dialogue'>Hello Name, it is a pleasure to make your acquaintance!</button><br>",
+            "2": "<button id='naughty' class='dialogue'>Forget You, Name</button><br>"
+        },
+        "nice": {
+            "0": "<p>The pleasure is all mine</p>"
+        },
+        "naughty": {
+            "0": "<p>I no longer wish to speak with you, goodbye.</p>",
+            "1": "<button id='greeting' class='dialogue'>I'm sorry, that was rude of me. Let's try that again.</button><br>"
+        },
+        "weed": {
+            "0": "<p>Can you imagine if the sea was sweet instead of salty?</p>"
+        }
+    }
+}

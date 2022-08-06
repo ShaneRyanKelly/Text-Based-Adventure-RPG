@@ -1,0 +1,1017 @@
+{   
+    "empty": {
+        "sceneName": "empty",
+        "html": {
+
+        },
+        "character": {
+
+        },
+        "enemy": {
+
+        },
+        "event": {
+
+        },
+        "inspect": {
+
+        },
+        "interact": {
+
+        },
+        "item": {
+
+        }
+    },
+    "test": {
+        "sceneName": "test",
+        "html": {
+            "title": "<h1 id='title' title='Title' class='info'>GAME</h1>",
+            "welcome": "Welcome to the Wonderful World of <span id='anotherTitle' title='Game' class='info'>GAME</span>.<br><br>",
+            "game": "GAME is a brand new <span id='rpg' title='Text-Based Role Playing Game' class='info'>text-based role-playing game</span> set in a strange and intimidating <span id='world' class='info' title='The World'>WORLD</span>. To learn more about a specific detail simply hover your mouse over thatdetail to reveal interesting facts and perhaps important clues.<br><br>",
+            "people": "During your time in WORLD you will encounter many interesting people to greet or trade with your new acquaintance simply click their <span id='name' title='Name' class='character'>NAME</span> and select TALK, BARTER, TRADE, ETC.<br><br>",
+            "enemies": "Not all people and creatures you will meet in WORLD will be of the friendly sort, in fact some will attack given provocation and others still will be all out aggressive. ",
+            "enemy": "To engage an <span id='fiend' title='Enemy' class='enemy'>ENEMY</span> click on their name</span>.",
+            "travel": "<br><br>During your travels you will find many useful ",
+            "item": "<span id='item' title='ITEMS' class='item'>ITEMS</span> to collect and ",
+            "object": "<span id='object' title='Object' class='object'>OBJECTS</span> to interact with. Here again, simple click will do the trick.<br><br>",
+            "bronzeDoor": "There is a <span id='bronzeDoor' title='Bronze Door' class='object'>bronze door</span> here.<br><br>",
+            "key": "There is a <span id='bronzeKey' title='Key' class='item'>key</span> here<br><br>",
+            "weed": "There is some dank <span id='weed' title='Weed' class='item'>weed</span> here<br><br>",
+            "gun": "There is a <span id='gun' title='Gun' class='item'>gun</span> here <br><br>",
+            "potion": "There is a <span id='potion' title='Potion' class='item'>potion</span> here <br><br>",
+            "exit": "An <span id='testes' class='exit' title='Exit'>EXIT</span> stands before you. Should you choose to step through the doorway your life will never be the same.<br><br>"
+        },
+        "character": {
+            "name": {
+                "id": "name",
+                "name": "Name",
+                "modifiesScene": "test",
+                "modifiesIndex": "enemy",
+                "modifiesText": "<button id='weed' class='dialogue'>That was some dank weed.</button>",
+                "item": "weed",
+                "itemText": "Name gets high af"
+            }
+        },
+        "enemy": {
+            "fiend": {
+                "name": "fiend",
+                "modifiesScene": "test",
+                "modifiesIndex": "enemy",
+                "modifiesText": "A fallen fiend lies lifelessly on the floor",
+                "itemText": "A single shot kills the fiend",
+                "itemModifies": "A fallen fiend lies lifelessly on the floor",
+                "item": "gun"
+            }
+        },
+        "inspect": {
+            "title": "<p>The Ultimate Game</p>",
+            "anotherTitle": "<p>Do not play GAME if you are prone to seizures</p>",
+            "rpg": "Nobody plays this sort of game.",
+            "world": "The world calls to you in the night. It stares at you as you sleep.",
+            "name": "They are of average size and proportion, their face reminds you of someone you have never met, they wave from a distance.",
+            "enemy": "A simple fiend, it shall provide a meager challenge",
+            "item": "The item glimmers before you, begging to be retrieved",
+            "hiddenItem": "The item is shrouded in secrecy",
+            "object": "The object begs you to interact with it. what does it do? Only one way to find out.",
+            "testes": "The portal before you pulsates with a welcoming energy. As you approach the doorway you begin to sense the familiar smell of your family home. You hear the voices of dear friends calling out to you.",
+            "bronzeDoor": "A heavy bronze door, maybe there is a key to unlock it.",
+            "weed": "You are entranced by the dank floral aroma of weed"
+        },
+        "interact": {
+            "object": {
+                "id": "object",
+                "interacted": false,
+                "modifiesScene": "testes",
+                "modifiesIndex": "hidden",
+                "inspect": "you hear something move ahead of you" ,
+                "html": "<p id='hiddenItemText'>Within a hidden chamber lies an additional <span id='secretItem' title='Secret Item' class='item'>ITEM</span></p>",  
+                "interactedText": "<p>You have already interacted with object",
+                "item": false
+            },
+            "bronzeDoor": {
+                "id": "bronzeDoor",
+                "interacted": true,
+                "modifiesScene": "test",
+                "modifiesIndex": "bronzeDoor",
+                "inspect": "A heavy wooden door" ,
+                "html": "There is a <span id='testes' title='Door' class='exit'>bronze door</span> here.<br><br>",  
+                "interactedText": "The door is locked",
+                "item": "bronzeKey"
+            }
+        },
+        "item": {
+            "item": {
+                "id": "item",
+                "name": "Item",
+                "single": true,
+                "modifiesScene": "test",
+                "modifiesIndex": "item",
+                "html": "",
+                "item": false  
+            },
+            "hiddenItem": {
+                "id": "hiddenItem",
+                "name": "Hidden Item",
+                "single": false,
+                "modifiesScene": "test",
+                "modifiesIndex": "hidden",
+                "html": "The hidden chamber is empty",
+                "item": false
+            },
+            "bronzeKey": {
+                "id": "bronzeKey",
+                "name": "Bronze Key",
+                "single": true,
+                "modifiesScene": "test",
+                "modifiesIndex": "key",
+                "html": "",
+                "item": false
+            },
+            "weed": {
+                "id": "weed",
+                "name": "Weed",
+                "single": true,
+                "modifiesScene": "test",
+                "modifiesIndex": "weed",
+                "html": "",
+                "item": false
+            },
+            "gun": {
+                "id": "gun",
+                "name": "Gun",
+                "single": true,
+                "modifiesScene": "test",
+                "modifiesIndex": "gun",
+                "html": "",
+                "item": false
+            },
+            "potion": {
+                "id": "potion",
+                "name": "Potion",
+                "single": true,
+                "modifiesScene": "test",
+                "modifiesIndex": "potion",
+                "html": "",
+                "item": false
+            }
+        }
+    },
+    "testes": {
+        "sceneName": "testes",
+        "html": {
+            "title": "<h1 id='title' title='Title' class='info'>New Scene</h1>",
+            "inspect": "<span id='newInfo' class='info'>inspect this</span><br>",
+            "exit": "<span id='test' class='exit'>Return to last scene</span><br>",
+            "switch": "<span id='object2' class='object'>A switch</span>",
+            "item": "<span id='item' title='ITEMS' class='item'>ITEMS</span>"
+        },
+        "character": {
+            
+        },
+        "enemy": {
+
+        },
+        "inspect": {
+
+        },
+        "interact": {
+            "object2": {
+                "interacted": false,
+                "modifiesScene": "test",
+                "modifiesIndex": "hidden",
+                "inspect": "You hear something move behind you" ,
+                "html": "<p id='hiddenItemText'>Seems you have found another <span id='hiddenItem' title='Additional Item' class='item'>ITEM</span></p>",
+                "interactedText": "<p>You have already interacted with object"  
+            }
+        },
+        "item": {
+            "secretItem": {
+                "id": "secretItem",
+                "name": "Secret Item",
+                "single": false,
+                "modifiesScene": "testes",
+                "modifiesIndex": "hidden",
+                "html": "The hidden chamber is empty"  
+            },
+            "item": {
+                "id": "item",
+                "name": "Item",
+                "single": true,
+                "modifiesScene": "testes",
+                "modifiesIndex": "item",
+                "html": ""  
+            }
+        }
+    },
+    "beach": {
+        "sceneName": "beach",
+        "html": {
+            "title": "<h1 id='title' title='Beach' class='info'>Beach : M-13</h1>",
+            "beach": "On a quiet beach in the early morning.<br><br>",
+            "nobody": "You are alone, nobody seems to be around.<br><br>",
+            "fishingRod": "It appears someone has left their <span id='fishingRod' title='Fishing Rod' class='item'>fishing rod</span> by the shoreline.<br><br>",
+            "fish": "You see birds diving and hear splashing. There are <span id='fish' title='Fish' class='object'>fish</span> close to shore.<br><br>",
+            "seagull": "You see a <span id='seagull' title='Seagull' class='enemy'>seagull</span> roosting at the end of a rock jetty.<br><br>",
+            "exit": "A <span id='meadow' title='Dune Path' class='exit'>pathway</span> North through the dunes leads into an open meadow.<br><br>"
+        },
+        "character": {
+            "albatross": {
+                "id": "albatross",
+                "name": "Albatross",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            }
+        },
+        "enemy": {
+            "seagull": {
+                "name": "seagull",
+                "modifiesScene": "beach",
+                "modifiesIndex": "seagull",
+                "modifiesText": "A lifeless seagull lies at the end of a rock jetty. <span id='albatrossKilled' title='Cry of the Albatross' class='event'>You hear the terrible cry of The Great Albatross</span><br><br>",
+                "itemText": "The bird happily accepts the fish",
+                "itemModifies": "The seagull seems content. On closer inspection you discover it is actually a juvenile <span id='albatross' title='Albatross' class='character'>albatross</span>.<br><br>",
+                "item": "fish"
+            }
+        },
+        "event": {
+            "albatrossKilled": {
+                "triggered": false,
+                "id": "albatrossKilled",
+                "modifiesScene": "albatross",
+                "modifiesIndex": "title",
+                "modifiesHtml": "<h1 id='title' title='Title' class='info'>Albatross Killed</h1>",
+                "currentIndex": "seagull",
+                "currentHtml": "Above a distant horizon you spy a terrible albatross tacking to the wind.<br><br>"
+            },
+            "albatrossLives": {
+                "triggered": false,
+                "id": "albatrossLives",
+                "modifiesScene": "albatross",
+                "modifiesIndex": "title",
+                "modifiesHtml": "<h1 id='title' title='Title' class='info'>Albatross Lives</h1>",
+                "currentIndex": "seagull",
+                "currentHtml": "Above a distant horizon you spy a great albatross tacking to the wind.<br><br>"
+            },
+            "bigFish": {
+                "triggered": false,
+                "id": "bigFish",
+                "modifiesScene": "",
+                "modifiesIndex": "",
+                "modifiesHtml": "",
+                "currentIndex": "seagull",
+                "currentHtml": "Seeming pleased by you, the albatross presents you with a <span id='giantFish' title='Giant Fish' class='item'>giant fish</span><br><br>"
+            }
+        },
+        "inspect": {
+            "title": "A peaceful beach",
+            "fishingRod": "The fishing rod seems to be in good shape, maybe you could use it.",
+            "fish": "Maybe there's something around here you could use to catch fish.",
+            "seagull": "The seagull seems aggressive, maybe you could find something to placate it.",
+            "meadow": "Wild flowers greet your footsteps as you approach the meadow."
+        },
+        "interact": {
+            "fish": {
+                "id": "fish",
+                "interacted": true,
+                "modifiesScene": "beach",
+                "modifiesIndex": "fish",
+                "inspect": "This is a great time of year for fishing in these waters.",
+                "html": "After a brief struggle you finally reel in the <span id='fish' title='Fish' class='item'>fish</span><br><br>",  
+                "interactedText": "You need a fishing rod to catch fish.",
+                "item": "fishingRod"
+            }
+        },
+        "item": {
+            "fishingRod": {
+                "id": "fishingRod",
+                "name": "Fishing Rod",
+                "single": false,
+                "modifiesScene": "beach",
+                "modifiesIndex": "fishingRod",
+                "html": "The sound of crashing waves soothes your soul. You feel that you are home.<br><br>",
+                "item": false
+            
+            },
+            "fish": {
+                "id": "fish",
+                "name": "Fish",
+                "single": true,
+                "modifiesScene": "beach",
+                "modifiesIndex": "fish",
+                "html": "An endless placid ocean stretches out before you.<br><br>",
+                "item": false
+            },
+            "giantFish": {
+                "id": "giantFish",
+                "name": "Giant Fish",
+                "single": true,
+                "modifiesScene": "beach",
+                "modifiesIndex": "seagull",
+                "html": "<span id='albatrossLives' title='The Albatross Lives' class='event'>You hear the victorious cry of The Great Albatross.</span><br><br>",
+                "item": false
+            }
+        
+        }
+    },
+    "meadow": {
+        "sceneName": "meadow",
+        "html": {
+            "title": "<h1 id='title' title='Meadow' class='info'>Beach Meadow : M-12</h1>",
+            "description": "An old <span id='antennae' title='Antennae' class='object'>antennae</span> stands just above the surrounding trees. A grassy field thick with yellow dandelions surrounds you.<br><br>",
+            "van": "There is an old <span id='van' title='Van' class='info'>van</span> here, the doors are locked tight.<br><br>",
+            "shack": "Across from the van is a <span id='shack' title='Shack' class='info'>shack</span>, it appears to be cobbled together from items that washed up on the beach<br><br>",
+            "jeff": "<span id='jeffChurch' title='Jeff Church' class='character'>Jeff Church</span> is sitting in a lawn chair, closely engaged in listening to static on the <span id='radio' title='Radio' class='info'>radio</span><br><br>",
+            "exit": "The Southern <span id='beach' title='Dune Path' class='exit'>path</span> leads back to the beach.<br><br>"
+        },
+        "character": {
+            "jeffChurch": {
+                "id": "jeffChurch",
+                "name": "Jeff Church",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            }
+        },
+        "enemy": {
+
+        },
+        "event": {
+            "showPath": {
+                "triggered": false,
+                "id": "showPath",
+                "modifiesScene": "",
+                "modifiesIndex": "",
+                "modifiesHtml": "",
+                "currentIndex": "exit2",
+                "currentHtml": "To the North lies the <span id='forest' title='Forest Trail' class='exit'>trail</span> to the Seaside Forest.<br><br>",
+                "modifiesDialogue": true,
+                "newDialogue": "<button id='unlock' class='dialogue'>Any way you can help me defeat the monsters?</button><br>"
+            },
+            "unlockVan": {
+                "triggered": false,
+                "id": "unlockVan",
+                "modifiesScene": "",
+                "modifiesIndex": "",
+                "modifiesHtml": "",
+                "currentIndex": "van",
+                "currentHtml": "Looking through the unlocked van you discover a <span id='baseballBat' title='Baseball Bat' class='item'>baseball bat</span> amongst the falderall.<br><br>"
+            },
+            "repairAntennae": {
+                "triggered": false,
+                "id": "repairAntennae",
+                "modifiesScene": "",
+                "modifiesIndex": "",
+                "modifiesHtml": "",
+                "currentIndex": "antennae",
+                "currentHtml": "The light atop the <span id='fixedAntennae' title='Baseball Bat' class='info'>antennae</span> begins to blink. Jeff's radio plays a happy song.<br><br>"
+            }
+        },
+        "inspect": {
+            "title": "A quiet meadow, you hear the song of birds and the buzz of cicadas in the trees.",
+            "van": "The van is an old Ford Econoline, it looks like it hasn't moved in ages.",
+            "baseballBat": "An old slugger, perhaps you can use it to beat down monsters.",
+            "hockeyStick": "An old twig, perhaps you can use it to beat down monsters.",
+            "poolCue": "It smells like beer, perhaps you can use it to beat down monsters.",
+            "beach": "The crashing surf calls to you at a distance",
+            "forest": "The hum of cicadas intensifies as you approach the trailhead.",
+            "radio": "An old Tropic Master radio",
+            "antennae": "A giant antennae, probably left behind by the military.",
+            "fireMagazine": "A magic magazine, a wizard shooting a fireball appears on the cover",
+            "strikeMagazine": "A magazine for martial artists. A man breaking cement bricks with his hands appears on the cover.",
+            "shack": "It looks like it will fall down in a strong breeze.",
+            "jeffChurch": "A startlingly average man, his friendly eyes endear you to him immediately."
+        },
+        "interact": {
+            "antennae": {
+                "id": "antennae",
+                "interacted": true,
+                "modifiesScene": "meadow",
+                "modifiesIndex": "antennae",
+                "inspect": "The antennae appears to be non-functioning, perhaps you could find something to get it working again",
+                "html": "You attach the new receiver to the antennae. <span id='antennaeRepaired' title='Repair the Antennae' class='event'>all that's left now is to power it up.</span>.<br><br>",  
+                "interactedText": "It seems the antennae receiver is broken",
+                "item": "receiver"
+            }
+        },
+        "item": {
+            "baseballBat": {
+                "id": "baseballBat",
+                "name": "Baseball Bat",
+                "single": true,
+                "modifiesScene": "meadow",
+                "modifiesIndex": "van",
+                "html": "As you rummage through the van you find a dusty old <span id='hockeyStick' title='Hockey Stick' class='item'>hockey stick</span>.<br><br>",
+                "item": false
+            },
+            "fireMagazine": {
+                "id": "fireMagazine",
+                "name": "Fire-Man Issue 1",
+                "single": true,
+                "modifiesScene": "meadow",
+                "modifiesIndex": "van",
+                "html": "Alongside the Magic Magazine is a copy of <span id='strikeMagazine' title='Strike of the Southern Cross #1' class='item'>Strike of the Southern Cross #1</span><br><br>",
+                "item": false
+            },
+            "hockeyStick": {
+                "id": "hockeyStick",
+                "name": "Hockey Stick",
+                "single": true,
+                "modifiesScene": "meadow",
+                "modifiesIndex": "van",
+                "html": "Underneath the hockey stick you spy a <span id='poolCue' title='Pool Cue' class='item'>pool cue</span>.<br><br>",
+                "item": false
+            },
+            "poolCue": {
+                "id": "poolCue",
+                "name": "Pool Cue",
+                "single": true,
+                "modifiesScene": "meadow",
+                "modifiesIndex": "van",
+                "html": "For good measure you should snag a <span id='potion' title='Potion' class='item'>potion</span> from an open box.<br><br>",
+                "item": false
+            },
+            "potion": {
+                "id": "potion",
+                "name": "Potion",
+                "single": true,
+                "modifiesScene": "meadow",
+                "modifiesIndex": "van",
+                "html": "Rifling through what's left in the van you discover a beat up copy of <span id='fireMagazine' title='Fire-Man #1' class='item'>Fire-Man #1</span>!<br><br>",
+                "item": false
+            },
+            "strikeMagazine": {
+                "id": "strikeMagazine",
+                "name": "Strike of the Southern Cross Issue 1",
+                "single": true,
+                "modifiesScene": "meadow",
+                "modifiesIndex": "van",
+                "html": "There is an old <span id='van' title='Van' class='info'>van</span> parked in the shade.<br><br>",
+                "item": false
+            }
+        }
+    },
+    "forest": {
+        "sceneName": "forest",
+        "html": {
+            "title": "<h1 id='title' title='Forest' class='info'>Seaside Forest : M-11</h1>",
+            "slime": "As you enter the forest, a <span id='slime' title='Slime' class='enemy'>slime</span> hops out of the underbrush, smiling up at you and blocking your path.<br><br>",
+            "slimeGarden": "",
+            "torteese": "",
+            "goblin": "",
+            "wizard": "",
+            "wizardTower": "",
+            "exit": "Following the <span id='meadow' title='Meadow Trail' class='exit'>trail</span> South leads back to the meadow.<br><br>",
+            "exit2": ""
+        },
+        "character": {
+            "frostWizard": {
+                "id": "frostWizard",
+                "name": "Frost Wizard",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            }
+        },
+        "enemy": {
+            "slime": {
+                "name": "slime",
+                "modifiesScene": "forest",
+                "modifiesIndex": "slime",
+                "modifiesText": "Still smiling, the slime presents you with a <span id='potion1' title='Potion' class='item'>potion</span> before hopping ahead down the trail.<br><br>",
+                "itemText": "",
+                "itemModifies": "",
+                "item": false
+            },
+            "frostWizard": {
+                "name": "frostWizard",
+                "modifiesScene": "forest",
+                "modifiesIndex": "wizard",
+                "modifiesText": "Rifling through his robes and pouches, the wizard produces a  <span id='potion4' title='Potion' class='item'>potion</span> and hands it to you.<br><br>",
+                "itemText": "",
+                "itemModifies": "",
+                "item": false
+            },
+            "goblin": {
+                "name": "goblin",
+                "modifiesScene": "forest",
+                "modifiesIndex": "goblin",
+                "modifiesText": "The goblin looks dejected as it sneaks off back into the swamp. You find a <span id='potion3' title='Potion' class='item'>potion</span> in the copse of trees.<br><br>",
+                "itemText": "",
+                "itemModifies": "",
+                "item": false
+            },
+            "torteese": {
+                "name": "torteese",
+                "modifiesScene": "forest",
+                "modifiesIndex": "torteese",
+                "modifiesText": "As the torteese slowly ambles off into the trees you see that it left behind a <span id='potion2' title='Potion' class='item'>potion</span>!<br><br>",
+                "itemText": "",
+                "itemModifies": "",
+                "item": false
+            }
+        },
+        "event": {
+            "slimeEvent": {
+                "triggered": false,
+                "id": "slimeDefeated",
+                "modifiesScene": "forest",
+                "modifiesIndex": "torteese",
+                "modifiesHtml": "In a clearing stands a giant <span id='torteese' title='Torteese' class='enemy'>torteese</span>, it does not look happy to see you.<br><br>",
+                "currentIndex": "slime",
+                "currentHtml": "The songs of birds welcome you to the Seaside Forest. Stunted trees stand among a leafy underbrush.<br><br>",
+                "modifiesDialogue": false,
+                "newDialogue": ""
+            },
+            "goblinEvent": {
+                "triggered": false,
+                "id": "slimeDefeated",
+                "modifiesScene": "forest",
+                "modifiesIndex": "wizard",
+                "modifiesHtml": "Finally, towards the end of the trail a menacing <span id='frostWizard' title='Frost Wizard' class='enemy'>Frost Wizard</span> stands defiantly.<br><br>",
+                "currentIndex": "goblin",
+                "currentHtml": "You swat away mosquitos as you make your way through a swampy section of forest.<br><br>",
+                "modifiesDialogue": false,
+                "newDialogue": ""
+            },
+            "torteeseEvent": {
+                "triggered": false,
+                "id": "slimeDefeated",
+                "modifiesScene": "forest",
+                "modifiesIndex": "goblin",
+                "modifiesHtml": "As you make your way through a dark and damp section of The Seaside Forest a <span id='goblin' title='Goblin' class='enemy'>goblin</span> jumps out from behind a copse of trees.<br><br>",
+                "currentIndex": "torteese",
+                "currentHtml": "You feel at peace in a clearing somewhere in the middle of the forest.<br><br>",
+                "modifiesDialogue": false,
+                "newDialogue": ""
+            },
+            "wizardEvent": {
+                "triggered": false,
+                "id": "wizardDefeated",
+                "modifiesScene": "forest",
+                "modifiesIndex": "exit2",
+                "modifiesHtml": "As you approach the <span id='town' title='Town' class='exit'>exit</span> to town, you hear the hum of a car making it's way down the motorway.<br><br>",
+                "currentIndex": "wizard",
+                "currentHtml": "Close to the forest exit <span id='frostWizard' title='Frost Wizard' class='character'>The Frost Wizard</span> sits atop a stump deep in thought.<br><br>",
+                "modifiesDialogue": false,
+                "newDialogue": ""
+            },
+            "blizzardWizard": {
+                "triggered": false,
+                "id": "blizzardWizard",
+                "modifiesScene": "forest",
+                "modifiesIndex": "slimeGarden",
+                "modifiesHtml": "Close to the forest entrance you discover a bubbling freshwater spring <span id='slime' title='Slime' class='enemy'>slimes</span> splash about the puddles.<br><br>",
+                "currentIndex": "wizard",
+                "currentHtml": "Close to the forest exit <span id='frostWizard' title='Frost Wizard' class='character'>Cryan the Blizzard Wizard</span> sits atop a stump deep in thought.<br><br>",
+                "modifiesDialogue": true,
+                "newDialogue": "<button id='wizards' class='dialogue'>What can you tell me about wizards?</button><br>"
+            },
+            "wizardTower": {
+                "triggered": false,
+                "id": "wizardTower",
+                "modifiesScene": "",
+                "modifiesIndex": "",
+                "modifiesHtml": "",
+                "currentIndex": "wizardTower",
+                "currentHtml": "Far off in the distance the pinnacle of <span id='wizardTower' title='Wizard Tower' class='info'>The Wizard's Tower</span> rises above the treetops.<br><br>",
+                "modifiesDialogue": true,
+                "newDialogue": "<button id='wizardTower' class='dialogue'>The Wizard's Tower? What's that?</button><br>"
+            }
+        },
+        "inspect": {
+            "town": "You see the outlines of buildings up ahead, finally, civilization.",
+            "meadow": "The forest opens up and thins as you approach the meadow.",
+            "frostWizard": "A long icicled beard pokes out from the hood of his cerulean robe.",
+            "goblin": "A mean-spirited, green skinned, evil goblin.",
+            "slime": "A small blue slime, perhaps you can beat the squish out of him.",
+            "torteese": "A giant tortoise, perhaps you have a weapon to poke him with.",
+            "wizardTower": "Black and menacing, it is so far away you could miss it if you weren't shown it."
+        },
+        "interact": {
+
+        },
+        "item": {
+            "potion1": {
+                "id": "potion",
+                "name": "Potion",
+                "single": true,
+                "modifiesScene": "forest",
+                "modifiesIndex": "slime",
+                "html": "<span id='slimeEvent' title='Slime Defeated' class='event'>Having defeated the slime you decide to move further into the forest.</span><br><br>",
+                "item": false
+            },
+            "potion2": {
+                "id": "potion",
+                "name": "Potion",
+                "single": true,
+                "modifiesScene": "forest",
+                "modifiesIndex": "torteese",
+                "html": "<span id='torteeseEvent' title='Torteese Defeated' class='event'>Having defeated the torteese you decide to move further into the forest.</span><br><br>",
+                "item": false
+            },
+            "potion3": {
+                "id": "potion",
+                "name": "Potion",
+                "single": true,
+                "modifiesScene": "forest",
+                "modifiesIndex": "goblin",
+                "html": "<span id='goblinEvent' title='Goblin Defeated' class='event'>With no sign of additional goblins in sight you decide to press on.</span><br><br>",
+                "item": false
+            },
+            "potion4": {
+                "id": "potion",
+                "name": "Potion",
+                "single": true,
+                "modifiesScene": "forest",
+                "modifiesIndex": "wizard",
+                "html": "<span id='wizardEvent' title='Wizard Defeated' class='event'>Seeming placid you thank the wizard for the potion and head to town.</span><br><br>",
+                "item": false
+            }
+        }
+    },
+    "town": {
+        "sceneName": "town",
+        "html": {
+            "title": "<h1 id='title' title='Seaside Town' class='info'>Seaside Town : M-11</h1>",
+            "center": "In the town's central plaza, <span id='sam' title='Sam Meegs' class='character'>Sam Meegs</span> peacefully tends to the flowers.<br><br>",
+            "ahabs": "The plaza around the town center is home to <span id='ahabs' title='Ahab's' class='exit'>Ahab's</span>, a popular diner.<br><br>",
+            "nemos": "To the West of the town center is <span id='nemos' title='Nemo's Sporting Goods' class='exit'>Nemo's Sporting Goods</span>, a staple for years.<br><br>",
+            "neptunes": "On Main Street is the comic book shop <span id='neptunes' title='Neptune's Dungeon' class='exit'>Neptune's Dungeon</span>.<br><br>",
+            "aubreys": "Outside <span id='aubreys' title='Aubrey's Videos' class='info'>Aubrey's Videos</span> <span id='joe' title='Joe Zwik' class='character'>Joe Zwik</span> stands out amongst a group of teenagers skating in the parking lot.<br><br>",
+            "exit": "To the South lies the <span id='forest' title='Forest Path' class='exit'>entrance</span> to the forest.<br><br>"
+
+        },
+        "character": {
+            "joe": {
+                "id": "joe",
+                "name": "Joe Zwik",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            },
+            "sam": {
+                "id": "sam",
+                "name": "Sam Meegs",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            }
+        },
+        "enemy": {
+
+        },
+        "event": {
+            
+        },
+        "inspect": {
+            "title": "A small drinking village, with a fishing problem.",
+            "center": "Next to the town center a century old church stands.",
+            "ahabs": "Ahab's populates an unassuming storefront. You see people inside gathered at tables laughing together.",
+            "nemos": "Nemo's specializes in equipment for hobbies and sports.",
+            "neptunes": "Neptune's Dungeon has been in town for years, they started out selling video tapes but transitioned to comics when Aubrey's opened.",
+            "aubreys": "A chain video store, it is busy with people heading in and out.",
+            "sam": "A thin bald man with a peaceful demeanor.",
+            "joe": "The only thing baggier than Joe's T-shirt is his Jeans.",
+            "forest": "You hear birds chirping as you approach the forest."
+        },
+        "interact": {
+
+        },
+        "item": {
+
+        }
+    },
+    "ahabs": {
+        "sceneName": "ahabs",
+        "html": {
+            "title": "<h1 id='ahabs' title='Ahab's Diner' class='info'>Ahab's Diner</h1>",
+            "entrance": "As you enter the diner the familiar scent of good food greets you, you begin to recall your own hometown.<br><br>",
+            "booth": "",
+            "oldMan": "",
+            "table": "",
+            "franny": "Looking flustered the waitress <span id='franny1' class='character'>Waitress</span> shouts orders into the kitchen window.<br><br>",
+            "exit": "Behind you is the door back to <span id='town' title='Exit' class='exit'>town.</span><br><br>"
+        },
+        "character": {
+            "cyberpunks": {
+                "id": "cyberpunks",
+                "name": "Cyberpunk",
+                "item": false,
+                "itemText": false,
+                "vendor": false,
+                "items": [ ]
+            },
+            "franny": {
+                "id": "franny",
+                "name": "Franny Dee",
+                "item": false,
+                "itemText": false,
+                "vendor": true,
+                "items": [ "hamburger", "milkshake", "potion", "ether" ]
+            },
+            "franny1": {
+                "id": "franny1",
+                "name": "Waitress",
+                "item": false,
+                "itemText": false,
+                "vendor": false,
+                "items": []
+            },
+            "franny2": {
+                "id": "franny2",
+                "name": "Waitress",
+                "item": false,
+                "itemText": false,
+                "vendor": false,
+                "items": []
+            },
+            "franny3": {
+                "id": "franny3",
+                "name": "Waitress",
+                "item": false,
+                "itemText": false,
+                "vendor": false,
+                "items": []
+            },
+            "franny4": {
+                "id": "franny3",
+                "name": "Franny Dee",
+                "item": false,
+                "itemText": false,
+                "vendor": false,
+                "items": []
+            },
+            "oldMan": {
+                "id": "oldMan",
+                "name": "Old Man",
+                "item": false,
+                "itemText": false,
+                "vendor": false,
+                "items": []
+            }
+        },
+        "enemy": {
+
+        },
+        "event": {
+            "cyberEvent": {
+                "triggered": false,
+                "id": "cyberEvent",
+                "modifiesScene": "ahabs",
+                "modifiesIndex": "franny",
+                "modifiesHtml": "Easing up a bit, the <span id='franny2' class='character'>Waitress</span> stands with her arms crossed.<br><br>",
+                "currentIndex": "booth",
+                "currentHtml": "The <span id='cyberpunks' class='character'>Cyberpunks</span>, occupying their usual booth, are consumed by their decks.<br><br>",
+                "modifiesDialogue": false,
+                "newDialogue": ""
+            },
+            "comic": {
+                "triggered": false,
+                "id": "comic",
+                "modifiesScene": "ahabs",
+                "modifiesIndex": "franny",
+                "modifiesHtml": "Easing up a bit, the <span id='franny' class='character'>Waitress</span> stands with her arms crossed.<br><br>",
+                "currentIndex": "table",
+                "currentHtml": "Seems someone left behind an issue of <span id='blizzardMagazine' class='item'>The Adventures of Cryan #1</span> at the table.<br><br>",
+                "modifiesDialogue": false,
+                "newDialogue": ""
+            },
+            "finallyFranny": {
+                "triggered": false,
+                "id": "finallyFranny",
+                "modifiesScene": "",
+                "modifiesIndex": "",
+                "modifiesHtml": "",
+                "currentIndex": "franny",
+                "currentHtml": "Wiping sweat from her brow, it seems <span id='franny' class='character'>Franny Dee</span> is finally relaxed.<br><br>",
+                "modifiesDialogue": true,
+                "newDialogue": "<button id='town' class='dialogue'>What can you tell me about this town?</button><br>"
+            },
+            "foodTray": {
+                "triggered": false,
+                "id": "foodTray",
+                "modifiesScene": "",
+                "modifiesIndex": "",
+                "modifiesHtml": "",
+                "currentIndex": "booth",
+                "currentHtml": "Franny hands you a <span id='foodTray' class='item'>big tray of piping hot hamburgers and ice cold milkshakes.</span><br><br>",
+                "modifiesDialogue": false,
+                "newDialogue": ""
+            },
+            "oldMan": {
+                "triggered": false,
+                "id": "oldMan",
+                "modifiesScene": "",
+                "modifiesIndex": "",
+                "modifiesHtml": "",
+                "currentIndex": "oldMan",
+                "currentHtml": "At the counter an <span id='oldMan' class='character'>old man</span> sits with his fingers crossed, meditating patiently as he waits for his food.</span><br><br>",
+                "modifiesDialogue": false,
+                "newDialogue": ""
+            },
+            "oldMan2": {
+                "triggered": false,
+                "id": "oldMan",
+                "modifiesScene": "ahabs",
+                "modifiesIndex": "franny",
+                "modifiesHtml": "Wiping sweat from her brow, it seems the <span id='franny3' class='character'>Waitress</span> is finally relaxed.<br><br>",
+                "currentIndex": "oldMan",
+                "currentHtml": "At the counter an <span id='oldMan' class='character'>Willard</span> sits with his fingers crossed, reading a newspaper as he eats his food.</span><br><br>",
+                "modifiesDialogue": true,
+                "newDialogue": "<button id='oldMan' class='dialogue'>So, what can you tell me about yourself</span><br>"
+            }
+        },
+        "inspect": {
+            "franny": "Known for her stunning beauty, nobody gets in Franny Dee's way.",
+            "franny1": "The most beautiful waitress in town.",
+            "franny2": "The most beautiful waitress in town.",
+            "franny3": "The most beautiful waitress in town.",
+            "foodTray": "Piled high with piping hot hamburgers.",
+            "cyberpunks": "Zealots of the latest technology, they never stop looking at their screens.",
+            "town": "You'll have to push past the line of people to get out.",
+            "oldMan": "A friendly older gentleman, he goes to the diner every day."
+        },
+        "interact": {
+            "cyberpunks": {
+                "id": "cyberpunks",
+                "interacted": true,
+                "modifiesScene": "ahabs",
+                "modifiesIndex": "booth",
+                "inspect": "They look at you sideways as you approach.",
+                "html": "<span id='cyberEvent' class='event'>Looking pleased the Cyberpunks chat noisily over their meal, you should go back to Franny.</span><br><br>",  
+                "interactedText": "Go ahead, hand them the food tray.",
+                "item": "foodTray"
+            }
+        },
+        "item": {
+            "foodTray": {
+                "id": "foodTray",
+                "name": "Food Tray",
+                "single": true,
+                "modifiesScene": "ahabs",
+                "modifiesIndex": "booth",
+                "html": "At a booth in the corner a bunch of <span id='cyberpunks' class='object'>Cyberpunks</span> sit waiting impatiently for their food.<br><br>",
+                "item": false
+            },
+            "blizzardMagazine": {
+                "id": "blizzardMagazine",
+                "name": "The Adventures of Cryan #1",
+                "single": true,
+                "modifiesScene": "ahabs",
+                "modifiesIndex": "table",
+                "html": "The jukebox in the corner is playing oldies.<br><br>",
+                "item": false
+            }
+        }
+    },
+    "nemos": {
+        "sceneName": "nemos",
+        "html": {
+            "title": "<h1 id='nemos' title='Nemo's Sporting Goods' class='info'>Nemo's Sporting Goods</h1>",
+            "alexa": "Behind the counter, Alexa Brooks stands to greet you.",
+            "exit": "Behind you is the door back to <span id='town' title='Exit' class='exit'>town.</span><br><br>"
+        },
+        "character": {
+            
+        },
+        "enemy": {
+
+        },
+        "event": {
+
+        },
+        "inspect": {
+
+        },
+        "interact": {
+
+        },
+        "item": {
+
+        }
+    },
+    "neptunes": {
+        "sceneName": "neptunes",
+        "html": {
+            "title": "<h1 id='neptunes' title='Neptune's Dungeon' class='info'>Neptune's Dungeon</h1>",
+            "entrance": "The smell of paper, old and new, greets you as you enter the dark comic book shop.<br><br>",
+            "shelves": "The shelves are arrayed with the latest comics, an issue of <span id='comic' class='info'>HR Guy</span> catches your eye.<br><br>",
+            "tabletop": "Out of sight, behind all the comics and collectibles a group of young men sit playing <span id='paper' class='info'>Paper Pusher</span>.<br><br>",
+            "potion": "It seems someone left a <span id='potion' class='item'>potion</span> sitting on an empty shelf<br><br>",
+            "counter": "Sitting behind the counter leafing through the latest issue of <span id='officeMan' class='info'>Office-Man</span> is <span id='sherm' class='character'>The Shermanator</span>.<br><br>",
+            "exit": "Behind you is the door back to <span id='town' title='Exit' class='exit'>town.</span><br><br>"
+        },
+        "character": {
+            "sherm": {
+                "id": "sherm",
+                "name": "The Shermanator",
+                "item": false,
+                "itemText": false,
+                "vendor": true,
+                "items": [ "fireMagazine", "blizzardMagazine", "thunderMagazine", "strikeMagazine", "kickMagazine", "fistMagazine" ]
+            }
+        },
+        "enemy": {
+
+        },
+        "event": {
+
+        },
+        "inspect": {
+            "neptunes": "A group of young men play a board game in the back of the shop. It smells like fresh paper.",
+            "sherm": "The King of Comics and Video Games.",
+            "town": "Through the glass door of the shop you see a group of young men smoking and chatting.",
+            "officeMan": "Office-Man answers phones confidently and types faster than a pistol shrimp.",
+            "comic": "HR Guy, he'll turn your quid pro quo to a quid pro no.",
+            "paper": "Paper Pusher: A pen and paper role playing game letting you live out your wildest fantasies.",
+            "broker": "The Broker stands confidently in his smart navy blue suit."
+        },
+        "interact": {
+
+        },
+        "item": {
+            "potion": {
+                "id": "potion",
+                "name": "Potion",
+                "single": true,
+                "modifiesScene": "neptunes",
+                "modifiesIndex": "potion",
+                "html": "A statuette of <span id='broker' class='info'>The Broker</span> stands out among the shelves of figurines.<br><br>",
+                "item": false
+            }
+        }
+    },
+    "marsh": {
+        "sceneName": "marsh",
+        "html": {
+
+        },
+        "character": {
+
+        },
+        "enemy": {
+
+        },
+        "event": {
+
+        },
+        "inspect": {
+
+        },
+        "interact": {
+
+        },
+        "item": {
+
+        }
+    },
+    "albatross": {
+        "sceneName": "albatross",
+        "html": {
+            "title": "<h1 id='title' title='Title' class='info'>Albatross' Domain - M-12</h1>",
+            "result": "unmodified <br><br>",
+            "exit": "The Southern <span id='beach' title='Dune Path' class='exit'>path</span> leads back to the beach.<br> To the North lies the <span id='forest' title='Forest Trail' class='exit'>trail</span> to the Seaside Forest.<br><br>"
+        },
+        "character": {
+        },
+        "enemy": {
+
+        },
+        "inspect": {
+
+        },
+        "interact": {
+
+        },
+        "item": {
+        
+        }
+    },
+    "empty2": {
+        "sceneName": "empty",
+        "html": {
+
+        },
+        "character": {
+
+        },
+        "enemy": {
+
+        },
+        "event": {
+
+        },
+        "inspect": {
+
+        },
+        "interact": {
+
+        },
+        "item": {
+
+        }
+    }
+}
+    

@@ -1,0 +1,48 @@
+{   
+    "base" : {
+        "name":"Frank",
+        "level": 1,
+        "class":"warrior"
+    },
+    "stats": {
+        "hp":30,
+        "maxHP": 30,
+        "mp": 15,
+        "maxMP": 15,
+        "rage": 0,
+        "sanity": 100,
+        "strength": 5,
+        "agility": 5,
+        "intelligence": 5,
+        "stamina": 5,
+        "luck": 5,
+        "baseAttack": 5,
+        "attack": 0,
+        "bluntAtt": 0,
+        "edgedAtt": 0,
+        "piercingAtt": 0,
+        "baseAccuracy": 5,
+        "accuracy": 0,
+        "baseDefense": 5,
+        "defense": 0,
+        "bluntDef": 0,
+        "edgedDef": 0,
+        "piercingDef": 0,
+        "baseEvasion": 5,
+        "evasion": 0,
+        "baseMDefense": 5,
+        "magicDefense": 0
+    },
+    "equip": {
+        "weapon": "glove",
+        "armor": "oldShirt",
+        "accessory": "baseballCap",
+        "weaponAffinity": "",
+        "armorAffinity": ""
+    },
+    "etc": {
+        "fin": 1000,
+        "exp": 0,
+        "next": 100
+    }
+}

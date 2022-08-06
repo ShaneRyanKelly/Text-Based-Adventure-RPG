@@ -1,0 +1,58 @@
+body {
+    text-align: center;
+    font-size: 1.5em;
+}
+p {
+    cursor: default;
+}
+button {
+    margin-top: 10px;
+}
+h2 {
+    background-color: black;
+    color: aliceblue;
+}
+#inspect {
+    background-color: black;
+    color: aliceblue;
+}
+.character {
+    background-color: aquamarine;
+    cursor: help;
+}
+.enemy {
+    background-color: crimson;
+    cursor: crosshair;
+}
+.event {
+    background-color: blue;
+    color: aliceblue;
+}
+.exit {
+    background-color: violet;
+    cursor: move;
+}
+.info {
+    cursor: help;
+    background-color: coral;
+}
+.item {
+    background-color: gold;
+    cursor: help;
+}
+.object {
+    background-color: sienna;
+    cursor: help;
+}
+.consumable{
+    background-color: aqua;
+}
+.equip{
+    background-color: blueviolet;
+}
+.key{
+    background-color: burlywood;
+}
+.usable{
+    background-color: crimson;
+}

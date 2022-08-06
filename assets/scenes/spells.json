@@ -1,0 +1,68 @@
+{
+    "fire": {
+        "id": "fire",
+        "name": "Fire",
+        "type": "magic",
+        "affinity": "fire",
+        "strongAgainst": "ice",
+        "weakAgainst": "water",
+        "cost": 3,
+        "sanity": 5,
+        "baseDamage": 30
+    },
+    "blizzard": {
+        "id": "blizzard",
+        "name": "Blizzard",
+        "type": "magic",
+        "affinity": "ice",
+        "strongAgainst": "wind",
+        "weakAgainst": "fire",
+        "cost": 3,
+        "sanity": 5,
+        "baseDamage": 30
+    },
+    "bluntFist": {
+        "id": "bluntFist",
+        "name": "Blunt Fist",
+        "type": "skill",
+        "affinity": "none",
+        "cost": 5,
+        "baseDamage": 20,
+        "blunt": 20,
+        "edged": 0,
+        "piercing": 0
+    },
+    "crescentKick": {
+        "id": "crescentKick",
+        "name": "Crescent Kick",
+        "type": "skill",
+        "affinity": "none",
+        "cost": 5,
+        "baseDamage": 20,
+        "blunt": 0,
+        "edged": 20,
+        "piercing": 0
+    },
+    "rageStrike": {
+        "id": "rageStrike",
+        "name": "Rage Strike",
+        "type": "skill",
+        "affinity": "none",
+        "cost": 5,
+        "baseDamage": 20,
+        "blunt": 0,
+        "edged": 0,
+        "piercing": 20
+    },
+    "thunder": {
+        "id": "thunder",
+        "name": "Thunder",
+        "type": "magic",
+        "affinity": "lightning",
+        "strongAgainst": "water",
+        "weakAgainst": "earth",
+        "cost": 3,
+        "sanity": 5,
+        "baseDamage": 30
+    }
+}
