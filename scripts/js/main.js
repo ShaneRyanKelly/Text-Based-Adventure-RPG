@@ -15,6 +15,7 @@ var spellArray = [];
 var inventory = [];
 var spellBook = [];
 var skills = [];
+var journal = [];
 
 class Player{
     constructor(name, playerClass, level, hp, maxHP, mp, maxMP, rage, sanity, strength, agility, intelligence, stamina, luck, baseAttack, attack, bluntAtt, edgedAtt, piercingAtt, baseAccuracy, accuracy, baseDefense, defense, bluntDef, edgedDef, piercingDef, baseEvasion, evasion, baseMDefense, magicDefense, weapon, armor, accessory, weaponAffinity, armorAffinity, fin, exp, next){
@@ -215,6 +216,12 @@ $("#mainMenu").on('click', '#statusButton', function(e){
     getStatus();
 });
 
+$("#mainMenu").on('click', '#journalButton', function(e){
+    fadedCanvas();
+    fadinAdd();
+    getJournal();
+});
+
 // Display contextual action bar buttons
 
 $( "#canvas" ).on('click', '.character', function(e){
@@ -310,6 +317,12 @@ $("#actionBar").on('click', '#barterButton', function(e){
 
 function getInspect(){
     $("#inspect").html(currentScene["inspect"][clickSource]);
+}
+
+function showMenu(){
+    $("#mainMenu").append(
+        "<button id='inventoryButton'>Inventory</button><button id='equipButton'>Equip</button><button id='statusButton'>Status</button><button id='journalButton'>Journal</button>"
+    );
 }
 
 // barter.js
@@ -699,6 +712,12 @@ function endBattle(){
     $("#addActions").append("</p><button id='exitButton'>Exit</button>");
     var defeatedEnemy = currentScene["enemy"][clickSource];
     modifyScene(defeatedEnemy["modifiesScene"], defeatedEnemy["modifiesIndex"], defeatedEnemy["modifiesHtml"]);
+    if (defeatedEnemy["modifiesCharacter"]){
+        modifyDialogue(defeatedEnemy["modifiesCharacter"], defeatedEnemy["modifiesDialogue"]);
+    }
+    if (defeatedEnemy["journal"]){
+        journal.push(defeatedEnemy["journal"]);
+    }
     showScene();
     $("#inspect").html("");
 }
@@ -740,13 +759,19 @@ var character;
 var currentID;
 
 $("#addOptions").on('click', '.dialogue', function(e){
-    if (character[e.target.id]["eventID"]){
-        console.log(character[e.target.id]["eventID"]);
-        var event = currentScene['event'][character[e.target.id]['eventID']];
+    var eventID = character[e.target.id]["eventID"];
+    if (eventID){
+        var event = currentScene['event'][eventID];
+        console.log(event);
         if (!event["triggered"]){
             modifyScene(event["modifiesScene"], event["modifiesIndex"], event["modifiesHtml"]);
             //modifyScene(sceneName, event["currentIndex"], event["currentHtml"]);
-            modifyDialogue(event);
+            if (event["modifiesCharacter"]){
+                modifyDialogue(event["modifiesCharacter"], event["modifiesDialogue"]);
+            }
+            if (event["journal"]){
+                journal.push(event["journal"]);
+            }
             event["triggered"] = true;
         }
     }
@@ -772,7 +797,7 @@ function startDialogue(newCharacter){
 function displayDialogue(currentDialogue){
     $("#addOptions").html("");
     for (let i = 0; i < Object.keys(currentDialogue).length; i++){
-        console.log(currentDialogue);
+        //console.log(currentDialogue);
         if (i == 0){
             $("#addScreen").append("<p><b>" + currentScene["character"][clickSource]["name"] + ":</b></p>" + currentDialogue[i]);
         }
@@ -783,9 +808,12 @@ function displayDialogue(currentDialogue){
     //$("#addOptions").fadeIn();
 }
 
-function modifyDialogue(event){
-    var dialogueTarget = characterArray[currentScene["character"][clickSource]["id"]]["greeting"];
-    dialogueTarget[Object.keys(dialogueTarget).length] = event["newDialogue"];
+function modifyDialogue(modifiesCharacter, modifiesDialogue){
+    console.log(modifiesCharacter)
+    for (let i = 0; i < Object.keys(modifiesCharacter).length; i++){
+        var dialogueTarget = characterArray[modifiesCharacter[i]]["greeting"];
+        dialogueTarget[Object.keys(dialogueTarget).length] = modifiesDialogue[i];
+    }
 }
 
 // equip.js
@@ -1017,7 +1045,7 @@ $("#useScreen").on('click', '.enemy', function(e){
     if (selectedItem["id"] === currentScene["enemy"][e.target.id]["item"]){
         $("#inspect").html(selectedItem["onUse"]);
         var currentEnemy = currentScene["enemy"][e.target.id];
-        modifyScene(currentEnemy["modifiesScene"], currentEnemy["modifiesIndex"], currentEnemy["itemModifies"]);
+        modifyScene(currentEnemy["itemScene"], currentEnemy["itemIndex"], currentEnemy["itemHtml"]);
         showScene();
         if (selectedItem["singleUse"]){
             decrementItem();
@@ -1207,6 +1235,19 @@ function useItem(){
     showUseScene();
 }
 
+// journal.js
+
+function getJournal(){
+    if (Object.keys(journal).length > 0){
+        $("#addScreen").html("");
+        for (let i=0; i<Object.keys(journal).length; i++)
+        {
+            $("#addScreen").html(journal[i]);
+        }
+    }
+    $("#addActions").html("<button id='exitButton'>Exit</button>");
+}
+
 // scene.js
 
 function modifyScene(sceneID, lineID, appendText){
@@ -1216,7 +1257,7 @@ function modifyScene(sceneID, lineID, appendText){
         }
     }*/
     for (let i = 0; i < Object.keys(sceneID).length; i++){
-        console.log(sceneArray[sceneID[i]]["html"][lineID[i]]);
+        //console.log(sceneArray[sceneID[i]]["html"][lineID[i]]);
         sceneArray[sceneID[i]]["html"][lineID[i]] = "";
         sceneArray[sceneID[i]]["html"][lineID[i]] = appendText[i];
     }
@@ -1256,12 +1297,6 @@ function showScene(){
     //for (var i = 0; i < Object.keys(currentScene["html"]).length; i++){
     //    $("#canvas").append(currentScene["html"][i]);
     //}
-}
-
-function showMenu(){
-    $("#mainMenu").append(
-        "<button id='inventoryButton'>Inventory</button><button id='equipButton'>Equip</button><button id='statusButton'>Status</button>"
-    );
 }
 
 $("#addActions").on('click', '#exitButton', function(e){

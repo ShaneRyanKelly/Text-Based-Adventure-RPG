@@ -17,6 +17,38 @@
             "0": "*squawk squawk* You exist in a state of ignorance, there is no getting through to you."
         }
     },
+    "alexa": {
+        "greeting": {
+            "0": "<p>Hi, welcome to Nemo's! How can I help you?</p>",
+            "1": "<button id='nice' class='dialogue'>Nice to meet you Alexa, can you help me pick a surf board?</button><br>",
+            "2": "<button id='alexa' class='dialogue'>What can you tell me about yourself?</button><br>"
+        },
+        "nice": {
+            "0": "<p>Um, I'm sorry, I don't really know a lot about surf boards. Maybe when my manager gets back he can help you.</p>",
+            "1": "<button id='manager' class='dialogue'>Your manager?</button><br>"
+        },
+        "manager": {
+            "0": "<p>Oh here he is now, why don't you ask him?</p>",
+            "1": "<button id='greeting' class='dialogue'>Oh, thanks! I'll be sure to ask him.</button><br>",
+            "eventID": "manager"
+        },
+        "alexa": {
+            "0": "<p>I just moved out here from the big city, things sure are different here. I appreciate the slower pace of life.</p>",
+            "1": "<button id='city' class='dialogue'>Big city? Where's that?</button><br>"
+        },
+        "city": {
+            "0": "<p>Central City is located in the, well, the center of the continent. I had to leave because things got dangerous there.</p>",
+            "1": "<button id='danger' class='dialogue'>I'm sorry to hear that. What kind of danger is there in Central City?</button><br>"
+        },
+        "danger": {
+            "0": "<p>Well, gangs of cyberpunks have all but taken over the city, it's a mess. The wizards try to keep the punks in check, but it seems the old men are losing their grip.</p>",
+            "1": "<button id='greeting' class='dialogue'>Sounds scary, what else can you tell me about?</button><br>"
+        },
+        "russ": {
+            "0": "<p>Russ has a kind heart but the things he says sometimes get him into trouble.</p>",
+            "1": "<button id='greeting' class='dialogue'>Tell me about it, what else is new?</button>"
+        }
+    },
     "cyberpunks": {
         "greeting": {
             "0": "*without taking his eyes off his deck* What do you want?"
@@ -82,13 +114,6 @@
             "eventID": "comic"
         }
     },
-    "oldMan": {
-        "greeting": {
-            "0": "<p>Hello, young man, my name is Willard, how are you today?</p>",
-            "1": "<button id='greeting' class='dialogue'>Hello sir, I just came to tell you that you're food is on the way.</button><br>",
-            "eventID": "oldMan2"
-        }
-    },
     "frostWizard": {
         "greeting": {
             "0": "*whew* I'm bushed, you are quite proficient in magic my young friend.",
@@ -120,7 +145,7 @@
             "1": "<button id='greeting' class='dialogue'>I'm shook, let's talk about something else.</button><br>"
         }
     },
-    "jeffChurch": {
+    "jeff": {
         "greeting": {
             "0": "Hello friend, my name is Jeff. Did you pass out on the beach? Not the first time I've seen a guy like you pass through here.",
             "1": "<button id='exit' class='dialogue'>Where am I?</button><br>",
@@ -163,7 +188,82 @@
         },
         "unlock": {
             "0": "There's some stuff in my van you could use, feel free to take a look.",
+            "1": "<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>",
             "eventID": "unlockVan"
+        },
+        "albatrossLives": {
+            "0": "All I know is The Great Albatross resides far to the North in a snowy domain. Some believe it is some sort of god, he's got a whole cult of followers.",
+            "1": "<button id='greeting' class='dialogue'>Interesting, I'll be sure to remember that.</button><br>"
+        },
+        "albatrossDies": {
+            "0": "All I know is The Great Albatross resides far to the North in a snowy domain. Some believe it is some sort of god, he's got a whole cult of followers.",
+            "1": "<button id='greeting' class='dialogue'>Interesting, I'll be sure to remember that.</button><br>"
+        }
+    },
+    "joe": {
+        "greeting": {
+            "0": "<p>Hey man, where are you from?</p>",
+            "1": "<button id='home' class='dialogue'>I'm not sure where I'm from. Where are YOU from?</button><br>"
+        },
+        "home": {
+            "0": "<p>I was born in this town and I've hated it every day since. You don't know where you're from? We should chill sometime and try to figure it out.</p>"
+        }
+    },
+    "oldMan": {
+        "greeting": {
+            "0": "<p>Hello, young man, my name is Willard, how are you today?</p>",
+            "1": "<button id='greeting' class='dialogue'>Hello sir, I just came to tell you that you're food is on the way.</button><br>",
+            "eventID": "oldMan2"
+        }
+    },
+    "russ": {
+        "greeting": {
+            "0": "<p>Hello young man, how may I help you today?</p>",
+            "1": "<button id='surf' class='dialogue'>I was wondering if you could help me pick a surf board.</button><br>"
+        },
+        "surf": {
+            "0": "<p>Sure thing, what are you looking for? A long board? A short board? A fish? Oh, where to get started? Can I interest you in a gun, every citizen should own one.</p>",
+            "1": "<button id='guns' class='dialogue'>I was really only interested in a surf board.</button><br>"
+        },
+        "guns": {
+            "0": "<p>Guns are fantastic, I just can't stop talking about guns. They're fun to shoot and keep you safe, and if you want to hunt you'll need one.</p>",
+            "1": "<button id='greeting' class='dialogue'>Okay, nevermind.</button><br>"
+        }
+    },
+    "sam": {
+        "greeting": {
+            "0": "<p>Oh, hello there. Sorry I was lost in the flowers. It's a beautiful arrangement, don't you think?</p>",
+            "1": "<button id='flowers' class='dialogue'>The flowers are truly beautiful.</button><br>"
+        },
+        "sam": {
+            "0": "<p>I'm a naturalist.</p>"
+        },
+        "flowers": {
+            "0": "<p>Thank you! It's a lot of work but I try to keep the trees happy and flowers flourishing. I'm happy with the current arrangement but there's something missing.</p>",
+            "1": "<button id='missing' class='dialogue'>Something missing?</button><br>"
+        },
+        "missing": {
+            "0": "<p>Well there's a species of scarlet flower indigenous to the area around The Witch House out East. Nobody goes there so they are almost impossible to come by. I would go myself but I can't make the trek through the marsh to get there. It's not the legends about The Witch House that get me, it's the monsters in the marsh.</p>",
+            "1": "<button id='witchHouse' class='dialogue'>What legends of The Witch House?</button><br>",
+            "2": "<button id='marsh' class='dialogue'>What can you tell me about the monsters of the marsh?</button><br>",
+            "3": "<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>",
+            "eventID": "marsh"
+        },
+        "witchHouse": {
+            "0": "<p>Oh lord, people have been talking about that old house since before I got here. The kids say The Witch will tear your eyes out if you get anywhere close to the place. Some say she will follow you home and get you in your sleep. It's all a bunch of hullabaloo if you ask me!</p>",
+            "1": "<button id='missing' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "marsh": {
+            "0": "<p>The marsh is populated by Bog People. They're nasty buggers, always lurking about the grass covered in mud, I can't stand the sight of them. The only time they go away is during a thunderstorm, the lightning seems to scare them.</p>",
+            "1": "<button id='missing' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "albatrossLives": {
+            "0": "It is my life's goal to one day see The Great Albatross. Those that have seen it have said the sight is unbelievable.",
+            "1": "<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "albatrossDies": {
+            "0": "Recently, the somber cries of The Great Albatross can be heard all over the continent. I wonder what happened to make it so sad.",
+            "1":"<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>"
         }
     },
     "sherm": {
