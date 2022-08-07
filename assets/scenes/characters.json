@@ -106,11 +106,11 @@
     },
     "franny3": {
         "greeting": {
-            "0": "<p>*whew* Seems like the rush is finally over, hey look, someone left a comic book at one of the tables, take it if you want it.</p>",
+            "0": "<p>*whew* Seems like the rush is finally over. Thanks to you I can finally relax! Here's a <span class='item'>hamburger and milkshake</span>, on the house.</p>",
             "1": "<button id='accept' class='dialogue'>Hey, thanks!</button><br>"
         },
         "accept": {
-            "0": "Thank you sweet heart, I'll make it up to you, I promise.",
+            "0": "<p>Anytime, how else can I help you today?</p>",
             "eventID": "comic"
         }
     },
@@ -207,6 +207,36 @@
         },
         "home": {
             "0": "<p>I was born in this town and I've hated it every day since. You don't know where you're from? We should chill sometime and try to figure it out.</p>"
+        },
+        "high": {
+            "0": "That is truly bizarre. You can't even remember your own name? Huh, sounds like you were made for this town.<br>",
+            "1": "<button id='you' class='dialogue'>I like you Joe, even though I just met you, I feel you are my friend.</button><br>",
+            "2": "<button id='town' class='dialogue'>Tell me more about the town.</button><br>",
+            "3": "<button id='weed' class='dialogue'>Wouldn't it be crazy if the ocean was sweet instead of salty?</button><br>"
+        },
+        "you": {
+            "0": "Like I said, I've lived here since I was born and I'm gonna get as far away from this town as humanly possible.<br>",
+            "1": "<button id='town' class='dialogue'>Why do you hate this place so much?</button><br>",
+            "2": "<button id='high' class='dialogue'>Did you see that butterfly?</button><br>"
+        },
+        "town": {
+            "0": "Like I said, this town sucks. It doesn't even have a name. I just want to get out of here. I just want to see the world!<br>",
+            "1": "<button id='you' class='dialogue'>Why do you hate this place so much?</button><br>",
+            "2": "<button id='high' class='dialogue'>How long have we been talking for?</button><br>"
+        },
+        "weed": {
+            "0": "Dude that would be sick. I wonder if there are planets out there with sugary oceans.<br>",
+            "1": "<button id='candy' class='dialogue'>What's your favorite candy?</button><br>",
+            "2": "<button id='ocean' class='dialogue'>How big is an ocean?</button><br>",
+            "3": "<button id='high' class='dialogue'>Wouldn't it be crazy if the ocean was sweet instead of salty?</button><br>"
+        },
+        "candy": {
+            "0": "I don't really like sweets myself, but I can't turn down a butterfinger.<br>",
+            "1": "<button id='weed' class='dialogue'>Fresh caught butterfingers are on the menu.</button><br>"
+        },
+        "ocean": {
+            "0": "The ocean is pretty big dude. Like bigger than you can imagine big. I wouldn't be surprised if it goes on forever.<br>",
+            "1": "<button id='weed' class='dialogue'>An endless supply of candy.</button><br>"
         }
     },
     "oldMan": {
@@ -214,7 +244,11 @@
             "0": "<p>Hello, young man, my name is Willard, how are you today?</p>",
             "1": "<button id='greeting' class='dialogue'>Hello sir, I just came to tell you that you're food is on the way.</button><br>",
             "eventID": "oldMan2"
+        },
+        "oldMan": {
+            "0": "<p>I love coming to this diner, the food is fantastic.</p>"
         }
+
     },
     "russ": {
         "greeting": {

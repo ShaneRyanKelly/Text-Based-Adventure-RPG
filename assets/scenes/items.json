@@ -268,6 +268,7 @@
         "id": "foodTray",
         "name": "Food Tray",
         "description": "Hurry! Get it to the customer before the food gets cold.",
+        "onUse": "The cyberpunks greedily accept the meal.",
         "quantity": 0,
         "type": "usable",
         "statEffected": false,
@@ -523,7 +524,7 @@
         "description": "gets you high",
         "quantity": 0,
         "type": "usable",
-        "onUse": "You both get high af",
+        "onUse": "*cough* *cough*",
         "statEffected": false,
         "effect": false,
         "singleUse": false

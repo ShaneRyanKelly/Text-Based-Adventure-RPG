@@ -48,7 +48,7 @@
                 "name": "Name",
                 "modifiesScene": "test",
                 "modifiesIndex": "enemy",
-                "modifiesText": "<button id='weed' class='dialogue'>That was some dank weed.</button>",
+                "modifiesDialogue": "<button id='weed' class='dialogue'>That was some dank weed.</button>",
                 "item": "weed",
                 "itemText": "Name gets high af"
             }
@@ -259,7 +259,9 @@
                     "Above a distant horizon you spy a terrible albatross tacking to the wind.<br><br>"
                 ],
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
             },
             "albatrossLives": {
                 "triggered": false,
@@ -271,7 +273,9 @@
                     "Above a distant horizon you spy a great albatross tacking to the wind.<br><br>"
                 ],
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
             },
             "bigFish": {
                 "triggered": false,
@@ -286,6 +290,7 @@
                     "<button id='albatrossLives' class='dialogue'>What do you know of The Great Albatross?</button><br>",
                     "<button id='albatrossLives' class='dialogue'>What do you know of The Great Albatross?</button><br>"
                 ],
+                "givesItem": false,
                 "journal": "I have befriended a young albatross.<br><br>"
             }
         },
@@ -381,7 +386,8 @@
                     "To the North lies the trail to the <span id='forest' title='Forest Trail' class='exit'>Seaside Forest</span>.<br><br>"
                 ],
                 "modifiesCharacter": ["jeff"],
-                "modifiesDialogue": ["<button id='unlock' class='dialogue'>Any way you can help me defeat the monsters?</button><br>"]
+                "modifiesDialogue": ["<button id='unlock' class='dialogue'>Any way you can help me defeat the monsters?</button><br>"],
+                "journal": "A kind man named Jeff Church has shown me the way into town.<br><br>"
 
             },
             "unlockVan": {
@@ -393,7 +399,9 @@
                     "Looking through the unlocked van you discover a <span id='baseballBat' title='Baseball Bat' class='item'>baseball bat</span> amongst the falderall.<br><br>"
                 ],
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
             },
             "repairAntennae": {
                 "triggered": false,
@@ -404,7 +412,9 @@
                     "The light atop the <span id='fixedAntennae' title='Baseball Bat' class='info'>antennae</span> begins to blink. Jeff's radio plays a happy song.<br><br>"
                 ],
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
             }
         },
         "inspect": {
@@ -526,7 +536,8 @@
                 "itemModifies": [""],
                 "item": false,
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "journal": false
             },
             "frostWizard": {
                 "name": "frostWizard",
@@ -540,7 +551,8 @@
                 "itemHtml": [""],
                 "item": false,
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "journal": false
             },
             "goblin": {
                 "name": "goblin",
@@ -554,7 +566,8 @@
                 "itemHtml": [""],
                 "item": false,
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "journal": false
             },
             "torteese": {
                 "name": "torteese",
@@ -568,58 +581,11 @@
                 "itemHtml": [""],
                 "item": false,
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "journal": false
             }
         },
         "event": {
-            "slimeEvent": {
-                "triggered": false,
-                "id": "slimeDefeated",
-                "modifiesScene": ["forest", "forest"],
-                "modifiesIndex": ["torteese", "slime"],
-                "modifiesHtml": [
-                    "In a clearing stands a giant <span id='torteese' title='Torteese' class='enemy'>torteese</span>, it does not look happy to see you.<br><br>",
-                    "The songs of birds welcome you to the Seaside Forest. Stunted trees stand among a leafy underbrush.<br><br>"
-                ],
-                "modifiesCharacter": false,
-                "modifiesDialogue": false
-            },
-            "goblinEvent": {
-                "triggered": false,
-                "id": "slimeDefeated",
-                "modifiesScene": ["forest", "forest"],
-                "modifiesIndex": ["wizard", "goblin"],
-                "modifiesHtml": [
-                    "Finally, towards the end of the trail a menacing <span id='frostWizard' title='Frost Wizard' class='enemy'>Frost Wizard</span> stands defiantly.<br><br>",
-                    "You swat away mosquitos as you make your way through a swampy section of forest.<br><br>"
-                ],
-                "modifiesCharacter": false,
-                "modifiesDialogue": false
-            },
-            "torteeseEvent": {
-                "triggered": false,
-                "id": "slimeDefeated",
-                "modifiesScene": ["forest", "forest"],
-                "modifiesIndex": ["goblin", "torteese"],
-                "modifiesHtml": [
-                    "As you make your way through a dark and damp section of The Seaside Forest a <span id='goblin' title='Goblin' class='enemy'>goblin</span> jumps out from behind a copse of trees.<br><br>",
-                    "You feel at peace in a clearing somewhere in the middle of the forest.<br><br>"
-                ],
-                "modifiesCharacter": false,
-                "modifiesDialogue": false
-            },
-            "wizardEvent": {
-                "triggered": false,
-                "id": "wizardDefeated",
-                "modifiesScene": ["forest", "forest"],
-                "modifiesIndex": ["exit2", "wizard"],
-                "modifiesHtml": [
-                    "As you approach the exit to <span id='town' title='Town' class='exit'>town</span>, you hear the hum of a car making it's way down the motorway.<br><br>",
-                    "Close to the forest exit <span id='frostWizard' title='Frost Wizard' class='character'>The Frost Wizard</span> sits atop a stump deep in thought.<br><br>"
-                ],
-                "modifiesCharacter": false,
-                "modifiesDialogue": false
-            },
             "blizzardWizard": {
                 "triggered": false,
                 "id": "blizzardWizard",
@@ -630,7 +596,9 @@
                     "Close to the forest exit <span id='frostWizard' title='Frost Wizard' class='character'>Cryan the Blizzard Wizard</span> sits atop a stump deep in thought.<br><br>"
                 ],
                 "modifiesCharacter": ["frostWizard"],
-                "modifiesDialogue": ["<button id='wizards' class='dialogue'>What can you tell me about wizards?</button><br>"]
+                "modifiesDialogue": ["<button id='wizards' class='dialogue'>What can you tell me about wizards?</button><br>"],
+                "givesItem": false,
+                "journal": "I have met The Blizzard Wizard, Cryan.<br><br>"
             },
             "wizardTower": {
                 "triggered": false,
@@ -641,7 +609,9 @@
                     "Far off in the distance the pinnacle of <span id='wizardTower' title='Wizard Tower' class='info'>The Wizard's Tower</span> rises above the treetops.<br><br>"
                 ],
                 "modifiesCharacter": ["frostWizard"],
-                "modifiesDialogue": ["<button id='wizardTower' class='dialogue'>The Wizard's Tower? What's that?</button><br>"]
+                "modifiesDialogue": ["<button id='wizardTower' class='dialogue'>The Wizard's Tower? What's that?</button><br>"],
+                "givesItem": false,
+                "journal": "Cryan has told me of The Wizard's Tower, the home of the evil wizards.<br><br>"
             }
         },
         "inspect": {
@@ -724,8 +694,9 @@
             "joe": {
                 "id": "joe",
                 "name": "Joe Zwik",
-                "item": false,
-                "itemText": false,
+                "item": "weed",
+                "modifiesDialogue": "<button id='high' class='dialogue'>Yeah man, I just woke up on the beach. I can't even remember who I am.</button>",
+                "itemText": "You toke up with Joe.",
                 "vendor": false
             },
             "sam": {
@@ -751,7 +722,8 @@
                 "modifiesCharacter": ["sam"],
                 "modifiesDialogue": [
                     "<button id='sam' class='dialogue'>What can you tell me about yourself?</button><br>"
-                ]
+                ],
+                "journal": "The town naturalist, Sam, has requested that I venture through the Brackish Marsh to The Witch's House to find a rare flower for him.<br><br>"
             }
         },
         "inspect": {
@@ -855,7 +827,9 @@
                     "The <span id='cyberpunks' class='character'>Cyberpunks</span>, occupying their usual booth, are consumed by their decks.<br><br>"
                 ],
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
             },
             "comic": {
                 "triggered": false,
@@ -867,7 +841,9 @@
                     "Seems someone left behind an issue of <span id='blizzardMagazine' class='item'>The Adventures of Cryan #1</span> at the table.<br><br>"
                 ],
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "givesItem": ["hamburger", "milkshake"],
+                "journal": false
             },
             "finallyFranny": {
                 "triggered": false,
@@ -880,7 +856,9 @@
                 "modifiesCharacter": ["franny"],
                 "modifiesDialogue": [
                     "<button id='town' class='dialogue'>What can you tell me about this town?</button><br>"
-                ]
+                ],
+                "givesItem": false,
+                "journal": false
             },
             "foodTray": {
                 "triggered": false,
@@ -889,7 +867,9 @@
                 "modifiesIndex": ["booth"],
                 "modifiesHtml": ["Franny hands you a <span id='foodTray' class='item'>big tray of piping hot hamburgers and ice cold milkshakes.</span><br><br>"],
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
             },
             "oldMan": {
                 "triggered": false,
@@ -900,11 +880,13 @@
                     "At the counter an <span id='oldMan' class='character'>old man</span> sits with his fingers crossed, meditating patiently as he waits for his food.</span><br><br>"
                 ],
                 "modifiesCharacter": false,
-                "modifiesDialogue": false
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
             },
             "oldMan2": {
                 "triggered": false,
-                "id": "oldMan",
+                "id": "oldMan2",
                 "modifiesScene": ["ahabs", "ahabs"],
                 "modifiesIndex": ["franny", "oldMan"],
                 "modifiesHtml": [
@@ -912,7 +894,9 @@
                     "At the counter an <span id='oldMan' class='character'>Willard</span> sits with his fingers crossed, reading a newspaper as he eats his food.</span><br><br>"
                 ],
                 "modifiesCharacter": ["oldMan"],
-                "modifiesDialogue": ["<button id='oldMan' class='dialogue'>So, what can you tell me about yourself?</span><br>"]
+                "modifiesDialogue": ["<button id='oldMan' class='dialogue'>So, what can you tell me about yourself?</span><br>"],
+                "givesItem": false,
+                "journal": "I have met old man Willard.<br><br>"
             }
         },
         "inspect": {
@@ -1007,7 +991,9 @@
                     "The store's manager, <span id='russ' class='character'>Russ</span>, sits behind the desk chatting joyfully with Alexa.<br><br>"
                 ],
                 "modifiesCharacter": ["alexa"],
-                "modifiesDialogue": ["<button id='russ' class='dialogue'>What can you tell me about your manager?</span><br>"]
+                "modifiesDialogue": ["<button id='russ' class='dialogue'>What can you tell me about your manager?</span><br>"],
+                "givesItem": false,
+                "journal": false
                 
             }
         },
@@ -1083,6 +1069,7 @@
         "sceneName": "marsh",
         "html": {
             "title": "<h1 id='marsh' title='Brackish Marsh' class='info'>Brackish Marsh : M-12</h1>",
+            "weed": "There are fragrant <span id='weed' class='item'>weeds</span> growing about the marsh.<br><br>",
             "exit": "Behind you lies the way back to <span id='town' class='exit'>town</span><br><br>."
 
         },
@@ -1102,7 +1089,15 @@
 
         },
         "item": {
-
+            "weed": {
+                "id": "weed",
+                "name": "Dank Weed",
+                "single": true,
+                "modifiesScene": ["marsh"],
+                "modifiesIndex": ["weed"],
+                "modifiesHtml": [""],
+                "item": false
+            }
         }
     },
     "albatross": {

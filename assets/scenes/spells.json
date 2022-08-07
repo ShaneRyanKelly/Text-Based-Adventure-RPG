@@ -6,6 +6,7 @@
         "affinity": "fire",
         "strongAgainst": "ice",
         "weakAgainst": "water",
+        "description": "Singes the enemy with a fireball",
         "cost": 3,
         "sanity": 5,
         "baseDamage": 30
@@ -17,6 +18,7 @@
         "affinity": "ice",
         "strongAgainst": "wind",
         "weakAgainst": "fire",
+        "description": "Attacks the enemy with sharp icicles",
         "cost": 3,
         "sanity": 5,
         "baseDamage": 30
@@ -26,6 +28,7 @@
         "name": "Blunt Fist",
         "type": "skill",
         "affinity": "none",
+        "description": "A blunt aspected physical attack",
         "cost": 5,
         "baseDamage": 20,
         "blunt": 20,
@@ -37,6 +40,7 @@
         "name": "Crescent Kick",
         "type": "skill",
         "affinity": "none",
+        "description": "An edged aspected physical attack",
         "cost": 5,
         "baseDamage": 20,
         "blunt": 0,
@@ -48,6 +52,7 @@
         "name": "Rage Strike",
         "type": "skill",
         "affinity": "none",
+        "description": "A piercing aspected physical attack",
         "cost": 5,
         "baseDamage": 20,
         "blunt": 0,
@@ -61,6 +66,7 @@
         "affinity": "lightning",
         "strongAgainst": "water",
         "weakAgainst": "earth",
+        "description": "Discharge a spark at the enemy",
         "cost": 3,
         "sanity": 5,
         "baseDamage": 30

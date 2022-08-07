@@ -477,6 +477,7 @@ function update(){
 
 $("#addActions").on('click', '#attackButton', function(e){
     $("#addOptions").html("");
+    $("#inspect").html("");
 
     player["attackType"] = "attack";
     player["damage"] = getDamageDQ(player, enemy);
@@ -486,55 +487,85 @@ $("#addActions").on('click', '#attackButton', function(e){
 });
 
 $("#addActions").on('click', "#magicButton", function(e){
+    $("#inspect").html("Choose an Action.");
     $("#addOptions").html("");
     showSpells();
 });
 $("#addActions").on('click', "#equipButton", function(e){
+    $("#inspect").html("Change equipment.");
     $("#addOptions").html("");
     hideAdd();
     getEquip();
 });
 $("#addActions").on('click', "#fleeButton", function(e){
     $("#addOptions").html("");
+    $("#inspect").html("");
     inBattle = false;
     $("#addActions").html("");
     $("#addScreen").append("<p>" + player["name"] + " flees the battle<br>");
     $("#addActions").append("!</p><button id='exitButton'>Exit</button>");
 });
 $("#addActions").on('click', "#inspectButton", function(e){
+    $("#inspect").html("You inspect the enemy.");
     $("#addOptions").html("");
     hideAdd();
     fadinInv();
     showInspect();
 });
 $("#addActions").on('click', "#itemButton", function(e){
+    $("#inspect").html("Choose an item.");
     $("#addOptions").html("");
     hideAdd();
     getInventory();
 });
 $("#addActions").on('click', "#skillButton", function(e){
+    $("#inspect").html("Choose an Action.");
     $("#addOptions").html("");
     showSkills();
 });
 
 $("#addOptions").on('click', ".spell", function(e){
     $("#addOptions").html("");
+    if (player.mp >= spellBook[e.target.id]["cost"]){
+        player["attackType"] = "magic";
+        player["spellName"] = spellBook[e.target.id]["name"];
+        player["damage"] = getSpellDamage(spellBook[e.target.id], player, enemy);
+        enemy["damage"] = getEnemyDamage();
+        resolveTurn();
+    }
+    else {
+        $("#inspect").html("You do not have enough MP to cast that spell.");
+    }
 
-    player["attackType"] = "magic";
-    player["spellName"] = spellBook[e.target.id]["name"];
-    player["damage"] = getSpellDamage(spellBook[e.target.id]);
-    enemy["damage"] = getEnemyDamage();
-
-    resolveTurn();
 });
 $("#addOptions").on('click', ".skill", function(e){
     $("#addOptions").html("");
-    player["attackType"] = "skill";
-    player["skillName"] = skills[e.target.id]["name"];
-    player["damage"] = getSkillDamage(skills[e.target.id], player, enemy);
-    enemy["damage"] = getEnemyDamage();
+    if (player.rage >= skills[e.target.id]["cost"]){
+        player["attackType"] = "skill";
+        player["skillName"] = skills[e.target.id]["name"];
+        player["damage"] = getSkillDamage(skills[e.target.id], player, enemy);
+        enemy["damage"] = getEnemyDamage();
+        resolveTurn();
+    }
+    else {
+        $("#inspect").html("You must increase your rage to use this skill.");
+    }
+});
+$("#addOptions").on('mouseenter', ".skill", function(e){
+    $("#inspect").html(skills[e.target.id]["description"] + ", Costs " + skills[e.target.id]["cost"] + " RAGE");
 
-    resolveTurn();
+});
+$("#addOptions").on('mouseleave', ".skill", function(e){
+    $("#inspect").html("Choose an Action.");
+
+});
+$("#addOptions").on('mouseenter', ".spell", function(e){
+    $("#inspect").html(spellBook[e.target.id]["description"] + ", Costs " + spellBook[e.target.id]["cost"] + " MP");
+
+});
+$("#addOptions").on('mouseleave', ".spell", function(e){
+    $("#inspect").html("Choose an Action.");
+
 });
 
 function resolveTurn(){
@@ -575,13 +606,14 @@ function getEnemyDamage(){
     else if(spellArray[enemyAttack]["type"] == "magic"){
         enemy["attackType"] = "magic";
         enemy["spellName"] = spellArray[enemyAttack]["name"];
-        return getSpellDamage(spellArray[enemyAttack]);
+        return getSpellDamage(spellArray[enemyAttack], enemy, player);
     }
 }
 
-function getSpellDamage(spell){
+function getSpellDamage(spell, player1, player2){
     var multiplier = getAffinityMultiplier(spell);
-    console.log(multiplier);
+    player1.mp -= spell["cost"];
+    player1.sanity -= randomInt(spell["sanity"]);
     return Math.round(multiplier * (((spell["baseDamage"] - (enemy.magicDefense / 2)) + ((spell["baseDamage"] - (enemy.magicDefense / 2 + 1)) * randomInt(256)) / 256) / 4));
 }
 
@@ -596,12 +628,13 @@ function getSkillDamage(skill, player1, player2){
     if (player.piercingAtt > 0){
         modifier += skill["piercing"] - player2.piercingDef;
     }
+    player1.rage -= skill["cost"];
     return Math.round(((player1.attack + skill["baseDamage"]) - (player2.defense/2) + (((player1.attack + skill["baseDamage"]) - (player2.defense/2+1))*randomInt(256))/256) * ((100 + modifier) / 100));
 }
 
 function getAffinityMultiplier(spell){
     if (spell["strongAgainst"] == enemy.armorAffinity){
-        return 1.5;
+        return 2;
     }
     else if (spell["weakAgainst"] == enemy.armorAffinity){
         return .5;
@@ -636,6 +669,7 @@ function getDamageDQ(player1, player2){
     if (player.piercingAtt > 0){
         modifier += player1.piercingAtt - player2.piercingDef;
     }
+    player1.rage += randomInt(10);
     return Math.round((player1.attack - (player2.defense/2) + ((player1.attack - (player2.defense/2+1))*randomInt(256))/256) * ((100 + modifier) / 100));
 }
 
@@ -759,8 +793,9 @@ var character;
 var currentID;
 
 $("#addOptions").on('click', '.dialogue', function(e){
-    var eventID = character[e.target.id]["eventID"];
-    if (eventID){
+    
+    if (character[e.target.id]["eventID"]){
+        var eventID = character[e.target.id]["eventID"];
         var event = currentScene['event'][eventID];
         console.log(event);
         if (!event["triggered"]){
@@ -771,6 +806,11 @@ $("#addOptions").on('click', '.dialogue', function(e){
             }
             if (event["journal"]){
                 journal.push(event["journal"]);
+            }
+            if (event["givesItem"]){
+                for (let i = 0; i < Object.keys(event["givesItem"]).length; i++){
+                    addItem(event["givesItem"][i]);
+                }
             }
             event["triggered"] = true;
         }
@@ -847,6 +887,7 @@ $("#eqpScreen").on('click', "#accessory", function(e){
 $("#eqpActions").on('click', '#exitButton', function(e){
     if (inBattle){
         fadedEquip();
+        $("#inspect").html("Choose an action.")
         fadinAdd();
     }
     else{
@@ -1031,7 +1072,7 @@ $("#useScreen").on('click', '#exitButton', function(e){
 $("#useScreen").on('click', '.character', function(e){
     if (selectedItem["id"] === currentScene["character"][e.target.id]["item"]){
         $("#inspect").html(currentScene["character"][e.target.id]["itemText"]);
-        characterArray[e.target.id]["greeting"][Object.keys(characterArray[e.target.id]["greeting"]).length] = currentScene["character"][e.target.id]["modifiesText"];
+        characterArray[e.target.id]["greeting"][Object.keys(characterArray[e.target.id]["greeting"]).length] = currentScene["character"][e.target.id]["modifiesDialogue"];
         if (selectedItem["singleUse"]){
             decrementItem();
         }
@@ -1242,7 +1283,7 @@ function getJournal(){
         $("#addScreen").html("");
         for (let i=0; i<Object.keys(journal).length; i++)
         {
-            $("#addScreen").html(journal[i]);
+            $("#addScreen").append(journal[i]);
         }
     }
     $("#addActions").html("<button id='exitButton'>Exit</button>");
