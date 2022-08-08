@@ -394,6 +394,17 @@
         "shopPrice": 33,
         "sellingPrice": 13
     },
+    "newspaper": {
+        "id": "newspaper",
+        "name": "Newspaper",
+        "description": "describes the discovery of a sunken pirate ship.",
+        "quantity": 0,
+        "type": "usable",
+        "onUse": "You show the witch the newspaper",
+        "statEffected": false,
+        "effect": false,
+        "singleUse": false
+    },
     "oldShirt": {
         "id": "oldShirt",
         "name": "Old Shirt",

@@ -145,6 +145,49 @@
             "1": "<button id='greeting' class='dialogue'>I'm shook, let's talk about something else.</button><br>"
         }
     },
+    "ghost": {
+        "greeting": {
+            "0": "Oh my goodness, is that Master Samuel? You've returned! We feared the worst when The Surprise was lost in that terrible storm. Thank heavens you are alright!",
+            "1": "<button id='sam' class='dialogue'>Samuel?</button><br>",
+            "2": "<button id='surprise' class='dialogue'>The Surprise?</button><br>"
+        },
+        "sam": {
+            "0": "You're Samuel Hallett, are you not? The Pirate Prince? Morgan Bellamy's betrothed?",
+            "1": "<button id='surprise' class='dialogue'>The Surprise?</button><br>",
+            "2": "<button id='end' class='dialogue'>Well, I don't really know who I am, so I suppose it's possible.</button><br>",
+            "3": "<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "surprise": {
+            "0": "The Surprise! Surely you know your own ship's name!<br>",
+            "1": "<button id='sam' class='dialogue'>Why did you call me Sam?</button><br>",
+            "2": "<button id='end' class='dialogue'>Doesn't ring a bell.</button><br>",
+            "3": "<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "end": {
+            "0": "Wait while I fetch Master Aubrey, I'm sure the sight of him will bring you to your senses.",
+            "eventID": "innKeeper"
+        }
+    },
+    "innKeeper": {
+        "greeting": {
+            "0": "Hello! How can I help you today?",
+            "1": "<button id='woman' class='dialogue'>What happened to the Young Woman that was just here?</button><br>"
+        },
+        "woman": {
+            "0": "What woman? I'm the only person here. Now, would you like a room or not?",
+            "1": "<button id='greeting' class='dialogue'>*shudders* Let's talk about something else.</button><br>",
+            "eventID": "haunted"
+        },
+        "haunted": {
+            "0": "That's all just rumours and superstition! I've been living and working here for over 50 years and I've never seen a ghost or anything out of the ordinary.",
+            "1": "<button id='greeting' class='dialogue'>*shudders* Let's talk about something else.</button><br>"
+        },
+        "sam": {
+            "0": "Funny you should ask about that. The Captain Samuel Hallett was a close acquaintance to Captain Aubrey who once called this building home. Captain Hallett is famous for his meteoric rise as a pirate. With the capture of The H.M.S. Surprise in 1717 he went from a nobody to The Prince of Pirates overnight. Sadly the ship and her Captain were lost in a storm in these waters. The ship remained unfound for centuries until just last week the wreck was discovered not far off the Eastern point. Here take this <span class='newspaper'>Newspaper</span>, it talks all about the discovery of The Surprise.",
+            "1": "<button id='greeting' class='dialogue'>Hey thanks, I'll give it a read.</button><br>",
+            "eventID": "newspaper"
+        }
+    },
     "jeff": {
         "greeting": {
             "0": "Hello friend, my name is Jeff. Did you pass out on the beach? Not the first time I've seen a guy like you pass through here.",
@@ -206,7 +249,25 @@
             "1": "<button id='home' class='dialogue'>I'm not sure where I'm from. Where are YOU from?</button><br>"
         },
         "home": {
-            "0": "<p>I was born in this town and I've hated it every day since. You don't know where you're from? We should chill sometime and try to figure it out.</p>"
+            "0": "<p>I was born in this town and I've hated it every day since. You don't know where you're from? We should chill sometime and try to figure it out.</p>",
+            "1": "<button id='greeting' class='dialogue'>Yeah, you seem cool, let's do it.</button><br>",
+            "eventID": "joe"
+        },
+        "joe": {
+            "0": "<p>All I like to do is skate, smoke weed and play video games.</p>",
+            "1": "<button id='greeting' class='dialogue'>Same.</button><br>"
+        },
+        "witch": {
+            "0": "<p>*whispers* You shouldn't talk about that, man. She's always listening.</p>",
+            "1": "<button id='witch2' class='dialogue'>Who's listening?</button><br>"
+        },
+        "witch2": {
+            "0": "<p>The Witch, dude! Don't tell me you haven't heard the legends.</p>",
+            "1": "<button id='witch3' class='dialogue'>Legends?</button><br>"
+        },
+        "witch3": {
+            "0": "<p>Oh man, she'll tear your eyes out! The Witch has haunted that house out East since before my parents were born.</p>",
+            "1": "<button id='greeting' class='dialogue'>*shudders* Let's talk about something else.</button><br>"
         },
         "high": {
             "0": "That is truly bizarre. You can't even remember your own name? Huh, sounds like you were made for this town.<br>",

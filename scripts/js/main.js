@@ -232,6 +232,11 @@ $( "#canvas" ).on('click', '.character', function(e){
             '<button id="talkButton">Talk</button><button id="barterButton">Barter</span>'
         );
     }
+    else if(currentScene["character"][clickSource]["inn"] == true){
+        $("#actionBar").html(
+            '<button id="talkButton">Talk</button><button id="restButton">Rest</span>'
+        );
+    }
     else {
         $("#actionBar").html(
             '<button id="talkButton">Talk</button>'
@@ -314,6 +319,15 @@ $("#actionBar").on('click', '#barterButton', function(e){
     fadinOpt();
     startBarter();
 });
+$("#actionBar").on('click', '#restButton', function(e){
+    rest();
+});
+$("#actionBar").on('mouseenter', '#restButton', function(e){
+    $("#inspect").html("It costs " + currentScene['character'][clickSource]["restCost"] + " fin to rest here");
+});
+$("#actionBar").on('mouseleave', '#restButton', function(e){
+    $("#inspect").html("You can rest here.");
+});
 
 function getInspect(){
     $("#inspect").html(currentScene["inspect"][clickSource]);
@@ -323,6 +337,19 @@ function showMenu(){
     $("#mainMenu").append(
         "<button id='inventoryButton'>Inventory</button><button id='equipButton'>Equip</button><button id='statusButton'>Status</button><button id='journalButton'>Journal</button>"
     );
+}
+function rest(){
+    if (player.fin > currentScene['character'][clickSource]["restCost"]){
+        player.fin -= currentScene['character'][clickSource]["restCost"];
+        player.hp = player.maxHP;
+        player.mp = player.maxMP;
+        player.rage = 0;
+        player.sanity = 100;
+        $("#inspect").html("You sleep comfortably through the night.");
+    }
+    else {
+        $("#inspect").html("You do not have enough fin to rest here.");
+    }
 }
 
 // barter.js
@@ -747,7 +774,7 @@ function endBattle(){
     var defeatedEnemy = currentScene["enemy"][clickSource];
     modifyScene(defeatedEnemy["modifiesScene"], defeatedEnemy["modifiesIndex"], defeatedEnemy["modifiesHtml"]);
     if (defeatedEnemy["modifiesCharacter"]){
-        modifyDialogue(defeatedEnemy["modifiesCharacter"], defeatedEnemy["modifiesDialogue"]);
+        modifyDialogue(defeatedEnemy["dialogueIndex"], defeatedEnemy["modifiesCharacter"], defeatedEnemy["modifiesDialogue"]);
     }
     if (defeatedEnemy["journal"]){
         journal.push(defeatedEnemy["journal"]);
@@ -802,7 +829,7 @@ $("#addOptions").on('click', '.dialogue', function(e){
             modifyScene(event["modifiesScene"], event["modifiesIndex"], event["modifiesHtml"]);
             //modifyScene(sceneName, event["currentIndex"], event["currentHtml"]);
             if (event["modifiesCharacter"]){
-                modifyDialogue(event["modifiesCharacter"], event["modifiesDialogue"]);
+                modifyDialogue(event["dialogueIndex"], event["modifiesCharacter"], event["modifiesDialogue"]);
             }
             if (event["journal"]){
                 journal.push(event["journal"]);
@@ -848,11 +875,19 @@ function displayDialogue(currentDialogue){
     //$("#addOptions").fadeIn();
 }
 
-function modifyDialogue(modifiesCharacter, modifiesDialogue){
+function modifyDialogue(modifiesIndex, modifiesCharacter, modifiesDialogue){
     console.log(modifiesCharacter)
     for (let i = 0; i < Object.keys(modifiesCharacter).length; i++){
         var dialogueTarget = characterArray[modifiesCharacter[i]]["greeting"];
-        dialogueTarget[Object.keys(dialogueTarget).length] = modifiesDialogue[i];
+        console.log(modifiesIndex);
+        if (modifiesIndex[i] === "append"){
+            dialogueTarget[Object.keys(dialogueTarget).length] = modifiesDialogue[i];
+        }
+        else {
+            dialogueTarget[modifiesIndex] = modifiesDialogue[i];
+        }
+        
+        
     }
 }
 
