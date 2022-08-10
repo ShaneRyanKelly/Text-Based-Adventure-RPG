@@ -411,7 +411,7 @@
             "1": "<button id='who' class='dialogue'>Let's talk about something else.</button><br>"
         },
         "witch": {
-            "0": "<p>The Witch was born from all the negative psychic energy I had absorbed and produced during my lifetime, and that had not been a short life. When she appeared she locked me within this house and took over, creating the dark illusions you fought here to keep people away from this house where she toiled away in darkness.</p>",
+            "0": "<p>The Witch was born from all the negative psychic energy I had absorbed and produced during my lifetime, and that had not been a short life. When she appeared she locked me within this house and took over, creating the dark illusions you fought here to keep people away from this house where she toiled away in darkness. By burning the diary and locket, you destroyed two keepsafes of The Dark Witch's power, and in killing her you broke the curse.</p>",
             "1": "<button id='life' class='dialogue'>How long was your life?</button><br>",
             "2": "<button id='who' class='dialogue'>Let's talk about something else.</button><br>"
         },

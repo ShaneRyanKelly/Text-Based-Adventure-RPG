@@ -1380,7 +1380,7 @@
     "witchHouse": {
         "sceneName": "witchHouse",
         "html": {
-            "title": "<h1 id='marsh' title='Brackish Marsh' class='info'>The Witch House : M-13</h1>",
+            "title": "<h1 id='witchHouse' title='Witch House' class='info'>The Witch House : M-13</h1>",
             "house": "The creeping, growing life of the marsh gives way to wilted grass and flowers. The Witch House stands alone on a cliff by an endless grey ocean.  No sea birds call out, even the ocean is silent, as if The House has sucked all life from her surroundings.<br><br>",
             "door": "Your heart rate intensifies as you approach the <span id='frontDoor' class='object'>heavy black door</span> of the house.<br><br>",
             "foyer": "",
@@ -1519,17 +1519,20 @@
             "houseRestored": {
                 "triggered": false,
                 "id": "houseRestored",
-                "modifiesScene": ["witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse"],
-                "modifiesIndex": ["house", "door", "foyer", "mirrors", "left", "right", "heart", "exit"],
+                "modifiesScene": ["witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse" , "witchHouse", "marsh", "marsh"],
+                "modifiesIndex": ["house", "door", "foyer", "mirrors", "left", "right", "heart", "exit", "title", "islet", "exit2"],
                 "modifiesHtml": [
-                    "The Witch House is at peace.<br><br>",
+                    "The Bellamy House stands by a cliff before the ocean. You hear the rumbling surf crashing into the rocks below, and the calls of seabirds pursuiting schools of fish.<br><br>",
                     "The garden out front flourishes.<br><br>",
                     "In the foyer on a table is a letter from Samuel Hallett.<br><br>",
                     "Upstairs in a small room you find an item.<br><br>",
                     "Up in the attic you find another item.<br><br>",
                     "Down in the basement you find another item.<br><br>",
                     "In the heart of the house <span id='morgan' class='character'>Morgan Bellamy</span> resides peacefully.<br><br>",
-                    "To the East the buzz of insects welcomes you to the <span id='marsh' class='exit'>Marsh</span>.<br><br>"
+                    "To the East the buzz of insects welcomes you to the <span id='marsh' class='exit'>Marsh</span>.<br><br>",
+                    "<h1 id='witchHouse' title='Bellamy House' class='info'>The Bellamy House : M-13</h1>",
+                    "You rest briefly on an islet before continuing deeper into the marsh.<br><br>",
+                    "You faintly hear the sounds of the ocean as you approach <span id='witchHouse' class='exit'>The Bellamy House</span>.<br><br>"
                 ],
                 "modifiesCharacter": false,
                 "dialogueIndex": false,
