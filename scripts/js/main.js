@@ -111,10 +111,11 @@ function getLocalCharacter(){
 }
 
 class Enemy{
-    constructor(name, level, enemyClass, hp, maxHP, mp, maxMP, rage, sanity, 
+    constructor(id, name, level, enemyClass, hp, maxHP, mp, maxMP, rage, sanity, 
                 strength, agility, intelligence, stamina, 
                 luck, attack, bAtt, eAtt, pAtt, accuracy, defense, bDef, eDef, pDef, evasion, 
                 magicDefense, weaponAffinity, armorAffinity, attacks, fin, exp){
+        this.id = id;
         this.name = name;
         this.level = level;
         this.enemyClass = enemyClass;
@@ -339,6 +340,10 @@ function showMenu(){
     );
 }
 function rest(){
+    if (!currentScene['character'][clickSource]["triggered"]){
+        var newEvent = currentScene['character'][clickSource]["restEvent"]
+        triggerEvent2(newEvent)
+    }
     if (player.fin > currentScene['character'][clickSource]["restCost"]){
         player.fin -= currentScene['character'][clickSource]["restCost"];
         player.hp = player.maxHP;
@@ -444,6 +449,7 @@ function startBattle(){
     inBattle = true;
     var newEnemy = enemyArray[currentScene["enemy"][clickSource]["name"]];
     enemy = new Enemy(
+        newEnemy["id"],
         newEnemy["name"],
         newEnemy["level"],
         newEnemy["class"],
@@ -771,7 +777,8 @@ function endBattle(){
 
     }
     $("#addActions").append("</p><button id='exitButton'>Exit</button>");
-    var defeatedEnemy = currentScene["enemy"][clickSource];
+    console.log(currentScene["enemy"][enemy.id]);
+    var defeatedEnemy = currentScene["enemy"][enemy.id];
     modifyScene(defeatedEnemy["modifiesScene"], defeatedEnemy["modifiesIndex"], defeatedEnemy["modifiesHtml"]);
     if (defeatedEnemy["modifiesCharacter"]){
         modifyDialogue(defeatedEnemy["dialogueIndex"], defeatedEnemy["modifiesCharacter"], defeatedEnemy["modifiesDialogue"]);
@@ -784,7 +791,7 @@ function endBattle(){
 }
 function loseBattle(){
     inBattle = false;
-    player.hp = player.maxHP / 2;
+    player.hp = Math.round(player.maxHP / 2);
     $("#addActions").html("");
     $("#addOptions").html("");
     $("#addScreen").append("<p>" + player["name"] + " was knocked unconscious by " + enemy["name"]);
@@ -879,7 +886,6 @@ function modifyDialogue(modifiesIndex, modifiesCharacter, modifiesDialogue){
     console.log(modifiesCharacter)
     for (let i = 0; i < Object.keys(modifiesCharacter).length; i++){
         var dialogueTarget = characterArray[modifiesCharacter[i]]["greeting"];
-        console.log(modifiesIndex);
         if (modifiesIndex[i] === "append"){
             dialogueTarget[Object.keys(dialogueTarget).length] = modifiesDialogue[i];
         }
@@ -1037,6 +1043,21 @@ function triggerEvent(){
     }
 }
 
+function triggerEvent2(eventName){
+    var newEvent = currentScene["event"][eventName];
+    console.log(newEvent);
+    if (!newEvent["triggered"]){
+        if (newEvent["modifiesScene"]){
+            modifyScene(newEvent["modifiesScene"], newEvent["modifiesIndex"], newEvent["modifiesHtml"]);
+        }
+        if (newEvent["modifiesCharacter"]){
+            modifyDialogue(newEvent["dialogueIndex"], newEvent["modifiesCharacter"], newEvent["modifiesDialogue"]);
+        }
+        newEvent['triggered'] = true;
+        showScene();
+    }
+}
+
 // interact.js
 
 function getInteract(){
@@ -1156,6 +1177,7 @@ $("#useScreen").on('click', '.object', function(e){
 
 function addItem(newItem){
     var index;
+    console.log(newItem);
     index = hasItem(newItem);
     if (index === false){
         inventory[newItem] = itemArray[newItem];
@@ -1177,6 +1199,7 @@ function consumeItem(){
     $("#inspect").html("You consume " + selectedItem["name"]);
     if (selectedItem["statEffected"] == "hp"){
         owHeal();
+        update();
     }
     else if (selectedItem["statEffected"] == "magic"){
         addSpell(selectedItem["teaches"]);

@@ -373,7 +373,8 @@
                 "name": "Jeff Church",
                 "item": false,
                 "itemText": false,
-                "vendor": false
+                "vendor": true,
+                "items": ["potion", "ether"]
             }
         },
         "enemy": {
@@ -531,10 +532,12 @@
         "enemy": {
             "slime": {
                 "name": "slime",
-                "modifiesScene": ["forest"],
-                "modifiesIndex": ["slime"],
+                "modifiesScene": ["forest", "forest", "forest"],
+                "modifiesIndex": ["torteese", "slimeGarden", "slime"],
                 "modifiesHtml": [
-                    "Still smiling, the slime presents you with a <span id='potion1' title='Potion' class='item'>potion</span> before hopping ahead down the trail.<br><br>"
+                    "In a clearing stands a giant <span id='torteese' title='Torteese' class='enemy'>torteese</span>, it does not look happy to see you.<br><br>",
+                    "Close to the forest entrance you discover a bubbling freshwater spring <span id='slime' title='Slime' class='enemy'>slimes</span> splash about the puddles.<br><br>",
+                    "The songs of birds welcome you to the Seaside Forest. Stunted trees stand among a leafy underbrush.<br><br>"
                 ],
                 "itemScene": [""],
                 "itemIndex": [""],
@@ -598,10 +601,9 @@
             "blizzardWizard": {
                 "triggered": false,
                 "id": "blizzardWizard",
-                "modifiesScene": ["forest", "forest"],
-                "modifiesIndex": ["slimeGarden", "wizard"],
+                "modifiesScene": ["forest"],
+                "modifiesIndex": ["wizard"],
                 "modifiesHtml": [
-                    "Close to the forest entrance you discover a bubbling freshwater spring <span id='slime' title='Slime' class='enemy'>slimes</span> splash about the puddles.<br><br>",
                     "Close to the forest exit <span id='frostWizard' title='Frost Wizard' class='character'>Cryan the Blizzard Wizard</span> sits atop a stump deep in thought.<br><br>"
                 ],
                 "modifiesCharacter": ["frostWizard"],
@@ -638,18 +640,6 @@
 
         },
         "item": {
-            "potion1": {
-                "id": "potion",
-                "name": "Potion",
-                "single": true,
-                "modifiesScene": ["forest", "forest"],
-                "modifiesIndex": ["torteese", "slime"],
-                "modifiesHtml": [
-                    "In a clearing stands a giant <span id='torteese' title='Torteese' class='enemy'>torteese</span>, it does not look happy to see you.<br><br>",
-                    "The songs of birds welcome you to the Seaside Forest. Stunted trees stand among a leafy underbrush.<br><br>"
-                ],
-                "item": false
-            },
             "potion2": {
                 "id": "potion",
                 "name": "Potion",
@@ -760,7 +750,7 @@
             "center": "Next to the town center a century old church stands.",
             "ahabs": "Ahab's populates an unassuming storefront. You see people inside gathered at tables laughing together.",
             "nemos": "Nemo's specializes in equipment for hobbies and sports.",
-            "neptunes": "Neptune's Dungeon has been in town for years, they started out selling video tapes but transitioned to comics when Aubrey's opened.",
+            "neptunes": "Neptune's Dungeon has been in town for years, they started out selling video tapes but transitioned to comics when Sleeper-Hit opened.",
             "sleeper": "A chain video store, it is busy with people heading in and out.",
             "sam": "A thin bald man with a peaceful demeanor.",
             "joe": "The only thing baggier than Joe's T-shirt is his Jeans.",
@@ -1012,9 +1002,18 @@
                 "vendor": false,
                 "items": [ ],
                 "inn": true,
-                "restCost": 10
+                "restCost": 10,
+                "restEvent": "ghost",
+                "triggered": false
+            },
+            "shadow": {
+                "id": "shadow",
+                "name": "Dark Figure",
+                "item": false,
+                "itemText": false,
+                "vendor": false,
+                "items": [ ]
             }
-            
         },
         "enemy": {
 
@@ -1052,17 +1051,33 @@
                 "givesItem": false,
                 "journal": false
             },
-            "newspaper": {
+            "ghost": {
                 "triggered": false,
-                "id": "innKeeper",
-                "modifiesScene": false,
-                "modifiesIndex": false,
-                "modifiesHtml": false,
+                "id": "ghost",
+                "modifiesScene": ["aubreys"],
+                "modifiesIndex": ["room"],
+                "modifiesHtml": [
+                    "As you sleep peacefully in the dark room upstairs you are suddenly awoken by the door creaking open. The air grows chill as a <span id='shadow' class='character'>shadowy figure</span> enters the room and moves to the bedside.<br><br>"
+                ],
                 "modifiesCharacter": false,
                 "dialogueIndex": false,
                 "modifiesDialogue": false,
-                "givesItem": ["newspaper"],
-                "journal": "I received a newspaper detailing the discovery of The Surprise, the lost ship of Samuel Hallett.<br><br>"
+                "givesItem": false,
+                "journal": false
+            },
+            "ring": {
+                "triggered": false,
+                "id": "ghost",
+                "modifiesScene": ["aubreys"],
+                "modifiesIndex": ["room"],
+                "modifiesHtml": ["The room upstairs is locked tight.<br><br>"],
+                "modifiesCharacter": ["innKeeper"],
+                "dialogueIndex": ["append"],
+                "modifiesDialogue": [
+                    "<button id='ghost' class='dialogue'>Something strange happened to me in the room upstairs.</button><br>"
+                ],
+                "givesItem": ["simpleRing"],
+                "journal": "I stayed the night at Aubrey's inn and was visited upon by a dark apparition. The apparition handed me a ring and said 'for my beloved'.<br><br>"
             }
         },
         "inspect": {
@@ -1070,7 +1085,8 @@
             "ghost": "She is hauntingly beautiful.",
             "innKeeper": "He looks like an old salt.",
             "ship": "The name 'H.M.S. Surprise' is engraved on the back of the model.",
-            "woman": "It seems no one else can hear the sound."
+            "woman": "It seems no one else can hear the sound.",
+            "shadow": "A dark figure."
         },
         "interact": {
             "bell": {
@@ -1103,6 +1119,15 @@
             "newspaper": {
                 "id": "newspaper",
                 "name": "Newspaper",
+                "single": true,
+                "modifiesScene": false,
+                "modifiesIndex": false,
+                "modifiesHtml": false,
+                "item": false
+            },
+            "simpleRing": {
+                "id": "simpleRing",
+                "name": "Simple Ring",
                 "single": true,
                 "modifiesScene": false,
                 "modifiesIndex": false,
@@ -1232,25 +1257,113 @@
         "sceneName": "marsh",
         "html": {
             "title": "<h1 id='marsh' title='Brackish Marsh' class='info'>Brackish Marsh : M-12</h1>",
-            "weed": "There are fragrant <span id='weed' class='item'>weeds</span> growing about the marsh.<br><br>",
-            "bogPeople": "",
-            "exit": "Behind you lies the way back to <span id='town' class='exit'>town</span><br><br>."
+            "bogPeople": "As you enter the marsh, pushing aside the dense reeds, you see a <span id='bogPerson' class='enemy'>Bog Person</span> digging through the muck.<br><br>",
+            "canal": "You come to a canal too wide to hop over. Looks like you could knock over a <span id='tree' class='object'>tree</span><br><br>",
+            "islet": "",
+            "dog": "",
+            "weed": "",
+            "exit": "Behind you lies the way back to <span id='town' class='exit'>town</span><br><br>.",
+            "exit2": ""
 
         },
         "character": {
-
+            "ghostlyWoman": {
+                "id": "ghostlyWoman",
+                "name": "Woman in Black",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            }
         },
         "enemy": {
+            "bogPerson": {
+                "name": "bogPerson",
+                "modifiesScene": ["marsh"],
+                "modifiesIndex": ["bogPeople"],
+                "modifiesHtml": [
+                    "As you enter the marsh, pushing aside the dense reeds, you discover a <span id='bogPerson' class='enemy'>Bog Person</span> nest! It may be helpful to thin their numbers.<br><br>"
+                ],
+                "itemScene": [""],
+                "itemIndex": [""],
+                "itemHtml": [""],
+                "item": false,
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "journal": false
+            },
+            "womanInBlack": {
+                "name": "womanInBlack",
+                "modifiesScene": ["marsh", "marsh", "marsh"],
+                "modifiesIndex": ["islet", "dog", "weed"],
+                "modifiesHtml": [
+                    "You rest briefly on an islet before continuing deeper into the marsh, the spectre of The Witch House looms ahead.<br><br>",
+                    "As the ground under your feet begins to dry, a big <span id='blackDog' class='enemy'>Black Dog</span> holds ground between you and your destination.<br><br>"
 
+                ],
+                "itemScene": [""],
+                "itemIndex": [""],
+                "itemHtml": [""],
+                "item": false,
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "journal": false
+            },
+            "blackDog": {
+                "name": "blackDog",
+                "modifiesScene": ["marsh", "marsh", "marsh"],
+                "modifiesIndex": ["dog", "weed", "exit2"],
+                "modifiesHtml": [
+                    "",
+                    "Near the way to The Witch House you find a bunch of <span id='weed' class='item'>weeds</span> growing about the marsh.<br><br>",
+                    "The black silhouette of <span id='witchHouse' class='exit'>The Witch House</span> stands before you.<br><br>"
+
+                ],
+                "itemScene": [""],
+                "itemIndex": [""],
+                "itemHtml": [""],
+                "item": false,
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "journal": false
+            }
         },
         "event": {
-
+            "enemyWoman": {
+                "triggered": false,
+                "id": "enemyWoman",
+                "modifiesScene": ["marsh"],
+                "modifiesIndex": ["islet"],
+                "modifiesHtml": [
+                    "The <span id='womanInBlack' class='enemy'>Woman in Black</span> stands before you defiantly.<br><br>"
+                ],
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
+                
+            }
         },
         "inspect": {
 
         },
         "interact": {
-
+            "tree": {
+                "id": "tree",
+                "interacted": false,
+                "modifiesScene": ["marsh", "marsh"],
+                "modifiesIndex": ["canal",  "islet"],
+                "modifiesHtml": [
+                    "You knock down a dead tree to make a bridge across a wide canal.<br><br>",
+                    "You find yourself on an islet in the center of the marsh. A <span id='ghostlyWoman' class='character'>Black Robed Woman</span> sitting alone unbothered by the flies swarming about her.<br><br>"
+                ],  
+                "inspect": "A dead tree, looks like you could knock it over.",
+                "interactedText": "It's already down.",
+                "item": false
+            }
         },
         "item": {
             "weed": {
@@ -1259,9 +1372,82 @@
                 "single": true,
                 "modifiesScene": ["marsh"],
                 "modifiesIndex": ["weed"],
-                "modifiesHtml": [""],
+                "modifiesHtml": ["The fragrant smell of flowery weeds lingers in the air.<br><br>"],
                 "item": false
             }
+        }
+    },
+    "witchHouse": {
+        "sceneName": "witchHouse",
+        "html": {
+
+        },
+        "character": {
+            "mirrorLeft": {
+                "id": "mirrorLeft",
+                "name": "The Left Hand Mirror",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            },
+            "mirrorRight": {
+                "id": "mirrorRight",
+                "name": "The Right Hand Mirror",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            },
+            "morgan": {
+                "id": "morgan",
+                "name": "Morgan Bellamy",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            }
+        },
+        "enemy": {
+
+        },
+        "event": {
+            "keptLookingLeft": {
+                "triggered": false,
+                "id": "keptLookingLeft",
+                "modifiesScene": [""],
+                "modifiesIndex": [""],
+                "modifiesHtml": [
+                    ""
+                ],
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
+                
+            },
+            "keptLookingRight": {
+                "triggered": false,
+                "id": "keptLookingRight",
+                "modifiesScene": [""],
+                "modifiesIndex": [""],
+                "modifiesHtml": [
+                    ""
+                ],
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
+                
+            }
+        },
+        "inspect": {
+
+        },
+        "interact": {
+
+        },
+        "item": {
+
         }
     },
     "albatross": {

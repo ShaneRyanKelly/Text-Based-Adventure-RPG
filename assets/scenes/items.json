@@ -394,17 +394,6 @@
         "shopPrice": 33,
         "sellingPrice": 13
     },
-    "newspaper": {
-        "id": "newspaper",
-        "name": "Newspaper",
-        "description": "describes the discovery of a sunken pirate ship.",
-        "quantity": 0,
-        "type": "usable",
-        "onUse": "You show the witch the newspaper",
-        "statEffected": false,
-        "effect": false,
-        "singleUse": false
-    },
     "oldShirt": {
         "id": "oldShirt",
         "name": "Old Shirt",
@@ -451,6 +440,17 @@
         "shopPrice": 100,
         "sellingPrice": 33,
         "equipped": false
+    },
+    "simpleRing": {
+        "id": "simpleRing",
+        "name": "Simple Ring",
+        "description": "for my beloved.",
+        "quantity": 0,
+        "type": "usable",
+        "onUse": "You hold the ring aloft.",
+        "statEffected": false,
+        "effect": false,
+        "singleUse": false
     },
     "slugger": {
         "id": "slugger",

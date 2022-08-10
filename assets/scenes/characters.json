@@ -147,8 +147,8 @@
     },
     "ghost": {
         "greeting": {
-            "0": "Oh my goodness, is that Master Samuel? You've returned! We feared the worst when The Surprise was lost in that terrible storm. Thank heavens you are alright!",
-            "1": "<button id='sam' class='dialogue'>Samuel?</button><br>",
+            "0": "Oh my goodness, is that Master Hallett? You've returned! We feared the worst when The Surprise was lost in that terrible storm. Thank heavens you are alright!",
+            "1": "<button id='sam' class='dialogue'>Master Hallett?</button><br>",
             "2": "<button id='surprise' class='dialogue'>The Surprise?</button><br>"
         },
         "sam": {
@@ -168,6 +168,16 @@
             "eventID": "innKeeper"
         }
     },
+    "ghostlyWoman": {
+        "greeting": {
+            "0": "* The Black Robed Woman seems not to notice you *",
+            "1": "<button id='hello' class='dialogue'>Uh, Hello?</button><br>"
+        },
+        "hello": {
+            "0": "* As the woman raises her face to meet yours you notice her mouth is sewn shut. She lunges at you. *",
+            "eventID": "enemyWoman"
+        }
+    },
     "innKeeper": {
         "greeting": {
             "0": "Hello! How can I help you today?",
@@ -179,13 +189,35 @@
             "eventID": "haunted"
         },
         "haunted": {
-            "0": "That's all just rumours and superstition! I've been living and working here for over 50 years and I've never seen a ghost or anything out of the ordinary.",
+            "0": "That's all just rumours and superstition! I've been living and working here for over 50 years and I've never seen a ghost or anything out of the ordinary. All you need is a good night's sleep to set you right.",
             "1": "<button id='greeting' class='dialogue'>*shudders* Let's talk about something else.</button><br>"
         },
         "sam": {
-            "0": "Funny you should ask about that. The Captain Samuel Hallett was a close acquaintance to Captain Aubrey who once called this building home. Captain Hallett is famous for his meteoric rise as a pirate. With the capture of The H.M.S. Surprise in 1717 he went from a nobody to The Prince of Pirates overnight. Sadly the ship and her Captain were lost in a storm in these waters. The ship remained unfound for centuries until just last week the wreck was discovered not far off the Eastern point. Here take this <span class='newspaper'>Newspaper</span>, it talks all about the discovery of The Surprise.",
-            "1": "<button id='greeting' class='dialogue'>Hey thanks, I'll give it a read.</button><br>",
-            "eventID": "newspaper"
+            "0": "The Captain Samuel Hallett was a close acquaintance to Captain Aubrey who once called this building home. Captain Hallett is famous for his meteoric rise as a pirate. With the capture of The H.M.S. Surprise in 1717 he went from a nobody to The Prince of Pirates overnight. Sadly the ship and her Captain were lost in a storm in these waters. The ship remains unfound to this day.",
+            "1": "<button id='greeting' class='dialogue'>Huh, interesting.</button><br>"
+        },
+        "ghost": {
+            "0": "That's it, I'm closing that old room upstairs for good!",
+            "1": "<button id='greeting' class='dialogue'>I see, let's talk about something else.</button>"
+        }
+    },
+    "shadow": {
+        "greeting": {
+            "0": "* The shadow looms over the bed staring into you. *",
+            "1": "<button id='help' class='dialogue'>*You try to speak but words don't come out.*</button><br>"
+        },
+        "help": {
+            "0": "* The shadow bends in closer to your face *",
+            "1": "<button id='ring' class='dialogue'>*You find you cannot move or speak. You try to scream for help but only yelp incoherently*</button><br>"
+        },
+        "ring": {
+            "0": "* Finally the shadow stands upright and extends an icy hand, it hands you a <span id='simpleRing' class='item'>Simple Ring</span> *",
+            "1": "<button id='event' class='dialogue'>*You accept the ring*</button><br>",
+            "2": "<button id='help' class='dialogue'>*You cower in fear*</button><br>"
+        },
+        "event": {
+            "0": "*Before departing, the shadow whispers* For my beloved.",
+            "eventID": "ring"
         }
     },
     "jeff": {
@@ -300,6 +332,37 @@
             "1": "<button id='weed' class='dialogue'>An endless supply of candy.</button><br>"
         }
     },
+    "mirrorLeft": {
+        "greeting": {
+            "0": "* In the mirror you see yourself wearing a twisted grin. He is not you. He looks you directly in the eye as you gaze into the mirror. His grin twists till his face fills with deep lines. He reaches behind his back and produces a stout stiletto dagger. He touches the tip before plunging the knife deep into his heart. You feel the impact of the blade as it pierces a hole through your chest. *",
+            "1": "<button id='look' class='dialogue'>You slump over with the pain but continue looking into the mirror.</button><br>"
+        },
+        "look": {
+            "0": "* The other you continues slamming the stiletto into his chest and abdomen as you writhe on the ground feeling your body being ventilated by the blade. *",
+            "1": "<button id='keepLooking' class='dialogue'>Keep looking in the mirror.</button><br>",
+            "2": "<button id='greeting' class='dialogue'>Look away from the mirror.</button><br>"
+        },
+        "keepLooking":{
+            "0": "* Finally the other you stops and goes limp. He is dead. You realize that you are alive. Despite the writhing agony of the blade, you have survived! *",
+            "eventID": "keptLookingLeft"
+        }
+    },
+    "mirrorRight": {
+        "greeting": {
+            "0": "* In the mirror you see yourself, but an idealized version of your self. He is like you if you were smarter, fitter, and more handsome. He is also a few inches taller than you. He looks you in the eyes and then begins to look at you, the inferior version. He approaches you through the mirror and extends a hand through it. *",
+            "1": "<button id='look' class='dialogue'>Take his hand.</button><br>"
+        },
+        "look": {
+            "0": "* The idealized you takes your hand, looks you in the eyes and gives you a firm handshake. 'This is what you look like when you're happy. You are enough.' He says, smiling slightly as he nods to you in approval and departs. *",
+            "1": "<button id='look' class='dialogue'>You leave feeling good about yourself.</button><br>",
+            "eventID": "keptLookingRight"
+        }
+    },
+    "morgan": {
+        "greeting": {
+            "0": "Thank you, with the demise of the black witch I am freed."
+        }
+    },
     "oldMan": {
         "greeting": {
             "0": "<p>Hello, young man, my name is Willard, how are you today?</p>",
@@ -338,14 +401,14 @@
             "1": "<button id='missing' class='dialogue'>Something missing?</button><br>"
         },
         "missing": {
-            "0": "<p>Well there's a species of scarlet flower indigenous to the area around The Witch House out East. Nobody goes there so they are almost impossible to come by. I would go myself but I can't make the trek through the marsh to get there. It's not the legends about The Witch House that get me, it's the monsters in the marsh.</p>",
+            "0": "<p>Well there's a species of scarlet flower indigenous to the area around The Witch House out East. Nobody goes there so they are almost impossible to come by. I would go myself but I can't make the trek through the marsh to get there. It's not the legends about The Witch House that get me, it's the monsters in the marsh. If I were you I would take a nice rest at <span class='exit'>Aubrey's Inn</span> you'll need all your strength to get through the marsh.</p>",
             "1": "<button id='witchHouse' class='dialogue'>What legends of The Witch House?</button><br>",
             "2": "<button id='marsh' class='dialogue'>What can you tell me about the monsters of the marsh?</button><br>",
             "3": "<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>",
             "eventID": "marsh"
         },
         "witchHouse": {
-            "0": "<p>Oh lord, people have been talking about that old house since before I got here. The kids say The Witch will tear your eyes out if you get anywhere close to the place. Some say she will follow you home and get you in your sleep. It's all a bunch of hullabaloo if you ask me!</p>",
+            "0": "<p>Oh geez, he doesn't know? The Witch House is a local legent. There's an old vacant house out by the point, it's been there for ages. One night a terrible storm hit and flooded all the land between here and that old Bellamy house. Since that day all the land's turned to marsh but The Witch House remains standing where it always has, on a lonenly cliff by the ocean.</p>",
             "1": "<button id='missing' class='dialogue'>Let's talk about something else.</button><br>"
         },
         "marsh": {
