@@ -1380,9 +1380,31 @@
     "witchHouse": {
         "sceneName": "witchHouse",
         "html": {
-
+            "title": "<h1 id='marsh' title='Brackish Marsh' class='info'>The Witch House : M-13</h1>",
+            "house": "The creeping, growing life of the marsh gives way to wilted grass and flowers. The Witch House stands alone on a cliff by an endless grey ocean.  No sea birds call out, even the ocean is silent, as if The House has sucked all life from her surroundings.<br><br>",
+            "door": "Your heart rate intensifies as you approach the <span id='frontDoor' class='object'>heavy black door</span> of the house.<br><br>",
+            "foyer": "",
+            "mirrors": "",
+            "left": "",
+            "right": "",
+            "heart": "",
+            "exit": "You could always turn tail and head back through the <span id='marsh' class='exit'>marsh</span><br><br>."
         },
         "character": {
+            "ghostlyMaiden": {
+                "id": "ghostlyMaiden",
+                "name": "Ghostly Maiden",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            },
+            "hopefulMaiden": {
+                "id": "hopefulMaiden",
+                "name": "Hopeful Maiden",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            },
             "mirrorLeft": {
                 "id": "mirrorLeft",
                 "name": "The Left Hand Mirror",
@@ -1403,19 +1425,128 @@
                 "item": false,
                 "itemText": false,
                 "vendor": false
+            },
+            "witch": {
+                "id": "witch",
+                "name": "The Witch",
+                "item": false,
+                "itemText": false,
+                "vendor": false
             }
         },
         "enemy": {
-
+            "crushedDreams": {
+                "name": "crushedDreams",
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["right"],
+                "modifiesHtml": [
+                    "The Crushed Dreams collapses upon itself and solidifies into a <span id='simpleLocket' class='item'>Simple Locket</span>.<br><br>"
+                ],
+                "itemScene": [""],
+                "itemIndex": [""],
+                "itemHtml": [""],
+                "item": false,
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "journal": false
+            },
+            "torturedAgony": {
+                "name": "torturedAgony",
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["left"],
+                "modifiesHtml": [
+                    "As the Tortured Agony fades, a <span id='blackDiary' class='item'>Black Diary</span> appears on the ground beneath.<br><br>"
+                ],
+                "itemScene": [""],
+                "itemIndex": [""],
+                "itemHtml": [""],
+                "item": false,
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "journal": false
+            },
+            "witch": {
+                "name": "witch",
+                "modifiesScene": ["witchHouse", "witchHouse"],
+                "modifiesIndex": ["heart", "exit"],
+                "modifiesHtml": [
+                    "In a flash of blinding light, The Witch is defeated. Where The Witch once stood a <span id='morgan' class='character'>Peaceful Maiden</span> appears.<br><br>",
+                    ""
+                ],
+                "itemScene": [""],
+                "itemIndex": [""],
+                "itemHtml": [""],
+                "item": false,
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "journal": false
+            }
         },
         "event": {
+            "atticGirl": {
+                "triggered": false,
+                "id": "atticGirl",
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["right"],
+                "modifiesHtml": [
+                    "As the girl dissipates to a white cloud of ectoplasm, a dense mass of <span id='crushedDreams' class='enemy'>Crushed Dreams</span> springs to life.<br><br>"
+                ],
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
+                
+            },
+            "basementGirl": {
+                "triggered": false,
+                "id": "basementGirl",
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["left"],
+                "modifiesHtml": [
+                    "As the girl dissipates to a black cloud of mist, a screaming mass of <span id='torturedAgony' class='enemy'>Tortured Agony</span> appears before you.<br><br>"
+                ],
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
+                
+            },
+            "houseRestored": {
+                "triggered": false,
+                "id": "houseRestored",
+                "modifiesScene": ["witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse"],
+                "modifiesIndex": ["house", "door", "foyer", "mirrors", "left", "right", "heart", "exit"],
+                "modifiesHtml": [
+                    "The Witch House is at peace.<br><br>",
+                    "The garden out front flourishes.<br><br>",
+                    "In the foyer on a table is a letter from Samuel Hallett.<br><br>",
+                    "Upstairs in a small room you find an item.<br><br>",
+                    "Up in the attic you find another item.<br><br>",
+                    "Down in the basement you find another item.<br><br>",
+                    "In the heart of the house <span id='morgan' class='character'>Morgan Bellamy</span> resides peacefully.<br><br>",
+                    "To the East the buzz of insects welcomes you to the <span id='marsh' class='exit'>Marsh</span>.<br><br>"
+                ],
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
+                
+            },
             "keptLookingLeft": {
                 "triggered": false,
                 "id": "keptLookingLeft",
-                "modifiesScene": [""],
-                "modifiesIndex": [""],
+                "modifiesScene": ["witchHouse", "witchHouse", "witchHouse"],
+                "modifiesIndex": ["left", "right", "mirrors"],
                 "modifiesHtml": [
-                    ""
+                    "After looking through the Left-Hand Mirror, the trap-door to the basement flies open with a slam. You proceed into the basement you find that it is flooded with black water up to your ankles. Within the basement you discover a <span id='basementDoor' class='object'>Door</span>. Beyond the door you hear muffled cries of anguish and grief.<br><br>",
+                    "",
+                    "The <span id='mirrorRight' class='character'>Right-Hand Mirror</span> stands within the foyer.<br><br>"
                 ],
                 "modifiesCharacter": false,
                 "dialogueIndex": false,
@@ -1427,9 +1558,28 @@
             "keptLookingRight": {
                 "triggered": false,
                 "id": "keptLookingRight",
-                "modifiesScene": [""],
-                "modifiesIndex": [""],
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["right"],
                 "modifiesHtml": [
+                    "You hear a door creak open on the floor above you. You decide to head up and investigate, you discover the open door to the attic, faint daylight fights the darkness as you climb the attic stair and come to a small room. Within the room a <span id='hopefulMaiden' class='character'>Hopeful Maiden</span> sits at a desk, writing in her diary.<br><br>"
+                ],
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
+                "givesItem": false,
+                "journal": false
+                
+            },
+            "witch": {
+                "triggered": false,
+                "id": "witch",
+                "modifiesScene": ["witchHouse", "witchHouse", "witchHouse", "witchHouse", "witchHouse"],
+                "modifiesIndex": ["heart", "house", "door", "foyer", "mirrors"],
+                "modifiesHtml": [
+                    "Within the heart of The Witch House, <span id='witch' class='enemy'>The Witch</span> stands alone.<br><br>",
+                    "",
+                    "",
+                    "",
                     ""
                 ],
                 "modifiesCharacter": false,
@@ -1444,10 +1594,84 @@
 
         },
         "interact": {
-
+            "basementDoor": {
+                "id": "basementDoor",
+                "interacted": false,
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["left"],
+                "modifiesHtml": [
+                    "A red light creeps from the door frame as you pull open the door. Within the <span id='redRoom' class='info'>Red-Room</span> a <span id='ghostlyMaiden' class='character'>Weeping Maiden</span> sits alone on a stool.<br><br>"
+                ],  
+                "inspect": "You do not want to open the door.",
+                "interactedText": "",
+                "item": false
+            },
+            "frontDoor": {
+                "id": "frontDoor",
+                "interacted": true,
+                "modifiesScene": ["witchHouse", "witchHouse", "witchHouse"],
+                "modifiesIndex": ["door", "foyer", "mirrors"],
+                "modifiesHtml": [
+                    "As you lift the ring the door opens. Overcoming your mounting fear, you proceed within.<br><br>",
+                    "A <span id='candle' class='object'>black candle</span> burns on a table in the middle of the foyer.<br><br>",
+                    "Within the shadows that cling to the foyer are two mirrors, the <span id='mirrorLeft' class='character'>Left-Hand Mirror</span> and the <span id='mirrorRight' class='character'>Right-Hand Mirror</span>.<br><br>"
+                ],  
+                "inspect": "Behind the door is only silence.",
+                "interactedText": "The door will not budge, perhaps you should head back to town to rest.",
+                "item": "simpleRing"
+            },
+            "candle": {
+                "id": "candle",
+                "interacted": true,
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["foyer"],
+                "modifiesHtml": [
+                    "As you burn the journal the flame of the candle grows brighter, the fire burns hotter and grows to a <span id='giantFlame' class='object'>Giant Flame</span> threatening to burn down the house.<br><br>"
+                ],  
+                "inspect": "The fire is as blinding as the shadows once were.",
+                "interactedText": "You should use the fire to burn something else.",
+                "item": "blackDiary"
+            },
+            "giantFlame": {
+                "id": "giantFlame",
+                "interacted": true,
+                "modifiesScene": ["witchHouse", "witchHouse", "witchHouse"],
+                "modifiesIndex": ["foyer", "heart", "mirrors"],
+                "modifiesHtml": [
+                    "The locket melts and disintigrates as you hold the locket to the giant flame. Having spent all it's energy melting the locket the candle is extinguished.<br><br>",
+                    "With the candle extinguished the door to the heart of The Witch House is opened. Within the room is <span id='witch' class='character'>The Witch</span> muttering wicked incantations in unfathomable darkness.<br><br>",
+                    ""
+                ],  
+                "inspect": "The fire is as blinding as the shadows once were.",
+                "interactedText": "You should use the fire to burn something else.",
+                "item": "simpleLocket"
+            }
         },
         "item": {
-
+            "blackDiary": {
+                "id": "blackDiary",
+                "name": "Black Diary",
+                "single": true,
+                "modifiesScene": ["witchHouse", "witchHouse"],
+                "modifiesIndex": ["left", "mirrors"],
+                "modifiesHtml": [
+                    "",
+                    "Within the shadows that cling to the foyer are two mirrors, the <span id='mirrorLeft' class='character'>Left-Hand Mirror</span> and the <span id='mirrorRight' class='character'>Right-Hand Mirror</span>.<br><br>"
+                ],
+                "item": false
+            },
+            "simpleLocket": {
+                "id": "simpleLocket",
+                "name": "Simple Locket",
+                "single": true,
+                "modifiesScene": ["witchHouse", "witchHouse"],
+                "modifiesIndex": ["right", "mirrors"],
+                "modifiesHtml": [
+                    "",
+                    "Within the shadows that cling to the foyer are two mirrors, the <span id='mirrorLeft' class='character'>Left-Hand Mirror</span> and the <span id='mirrorRight' class='character'>Right-Hand Mirror</span>.<br><br>"
+                ],
+                "item": false
+            }
         }
     },
     "albatross": {

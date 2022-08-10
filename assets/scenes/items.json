@@ -96,6 +96,17 @@
         "sellingPrice": 100,
         "equipped": false
     },
+    "blackDiary": {
+        "id": "blackDiary",
+        "name": "Black Diary",
+        "description": "It is written in a script you cannot comprehend.",
+        "quantity": 0,
+        "type": "usable",
+        "onUse": "You hold the diary to the flame.",
+        "statEffected": false,
+        "effect": false,
+        "singleUse": true
+    },
     "blizzardMagazine": {
         "id": "blizzardMagazine",
         "name": "The Adventures of Cryan #1",
@@ -440,6 +451,17 @@
         "shopPrice": 100,
         "sellingPrice": 33,
         "equipped": false
+    },
+    "simpleLocket": {
+        "id": "simpleLocket",
+        "name": "Simple Locket",
+        "description": "Within is the portrait of a young captain.",
+        "quantity": 0,
+        "type": "usable",
+        "onUse": "You hold the locket to the flame.",
+        "statEffected": false,
+        "effect": false,
+        "singleUse": true
     },
     "simpleRing": {
         "id": "simpleRing",
