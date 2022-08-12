@@ -1405,6 +1405,13 @@
                 "itemText": false,
                 "vendor": false
             },
+            "letter": {
+                "id": "letter",
+                "name": "Samuel Hallett",
+                "item": false,
+                "itemText": false,
+                "vendor": false
+            },
             "mirrorLeft": {
                 "id": "mirrorLeft",
                 "name": "The Left Hand Mirror",
@@ -1523,11 +1530,11 @@
                 "modifiesIndex": ["house", "door", "foyer", "mirrors", "left", "right", "heart", "exit", "title", "islet", "exit2"],
                 "modifiesHtml": [
                     "The Bellamy House stands by a cliff before the ocean. You hear the rumbling surf crashing into the rocks below, and the calls of seabirds pursuiting schools of fish.<br><br>",
-                    "The garden out front flourishes.<br><br>",
-                    "In the foyer on a table is a letter from Samuel Hallett.<br><br>",
-                    "Upstairs in a small room you find an item.<br><br>",
-                    "Up in the attic you find another item.<br><br>",
-                    "Down in the basement you find another item.<br><br>",
+                    "Outside of the house is a garden flourishing with <span id='flower' class='item'>Red Flowers</span>.<br><br>",
+                    "On a table in the foyer is a <span id='letter' class='character'>Letter from Samuel Hallett</span>.<br><br>",
+                    "You look into the two ornate mirrors in the foyer and see your ordinary reflection.<br><br>",
+                    "As you rifle through antiques in the attic you discover an <span id='antiquatedShirt' class='item'>Antiquated Shirt</span> that fits you just right.<br><br>",
+                    "In a room upstairs you find a copy of <span id='cureMagazine' class='item'>Magical Morgan #1</span>!<br><br>",
                     "In the heart of the house <span id='morgan' class='character'>Morgan Bellamy</span> resides peacefully.<br><br>",
                     "To the East the buzz of insects welcomes you to the <span id='marsh' class='exit'>Marsh</span>.<br><br>",
                     "<h1 id='witchHouse' title='Bellamy House' class='info'>The Bellamy House : M-13</h1>",
@@ -1651,6 +1658,17 @@
             }
         },
         "item": {
+            "antiquatedShirt": {
+                "id": "antiquatedShirt",
+                "name": "Antiquated Shirt",
+                "single": true,
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["left"],
+                "modifiesHtml": [
+                    "The attic of the house is riddled with priceless antiques and magical curiosities.<br><br>"
+                ],
+                "item": false
+            },
             "blackDiary": {
                 "id": "blackDiary",
                 "name": "Black Diary",
@@ -1660,6 +1678,28 @@
                 "modifiesHtml": [
                     "",
                     "Within the shadows that cling to the foyer are two mirrors, the <span id='mirrorLeft' class='character'>Left-Hand Mirror</span> and the <span id='mirrorRight' class='character'>Right-Hand Mirror</span>.<br><br>"
+                ],
+                "item": false
+            },
+            "cureMagazine": {
+                "id": "cureMagazine",
+                "name": "Magical Morgan #1",
+                "single": true,
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["right"],
+                "modifiesHtml": [
+                    "The house is quiet, occasionally you hear a floor board creak but no one appears to be there."
+                ],
+                "item": false
+            },
+            "flower": {
+                "id": "flower",
+                "name": "Black Diary",
+                "single": true,
+                "modifiesScene": ["witchHouse"],
+                "modifiesIndex": ["door"],
+                "modifiesHtml": [
+                    "Outside of the house a garden flourishes with red flowers."
                 ],
                 "item": false
             },

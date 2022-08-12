@@ -360,6 +360,19 @@
             "eventID": "atticGirl"
         }
     },
+    "letter": {
+        "greeting": {
+            "0": "My Dearly Beloved Morgan, I write to you now one day removed from a historic moment for us and the world. My crew and I have managed to execute what will perhaps be remembered as the greatest capture in the history of sailing. We snuck aboard The Surprise in the night, managing to evade detection by the night's watch thanks to heavy rains that hit as we departed on our mission.",
+            "1": "<button id='part2' class='dialogue'>* Keep reading *</button><br>"
+        },
+        "part2": {
+            "0": "While most The Surprise's crew enjoyed the evening whoring on shore leave, we clambered up the portside of the vessel and quickly did away with her watchmen. We were allowed then to head to the Captain's Quarters where the ship's captain slept alone. He rose with a start, finding himself surrounded by a band of pirates. Fearing for the loss of his life and that of the crew the Captain was led to the main deck and was cast away over the railing.",
+            "1": "<button id='part3' class='dialogue'>* Keep reading *</button><br>"
+        },
+        "part3": {
+            "0": "As the former Captain floundered aft the ship's crew came to, most among them were agreeable to their new Captain, eager to take a share from the captured ship's gold lined hold. Those of the crew who refused me were granted amnesty and sent to follow their captain floating back ashore. We now sail under-manned at thirty-three sailors, making way towards you, my love. Know that you are always in my thoughts and that I will always come back to you. Yours, Captain Samuel Hallett."
+        }
+    },
     "mirrorLeft": {
         "greeting": {
             "0": "* In the mirror you see yourself wearing a twisted grin. He is not you. He looks you directly in the eye as you gaze into the mirror. His grin twists till his face creases with deep lines. He reaches behind his back and produces a stout stiletto dagger. He touches the tip before plunging the knife deep into his heart. You feel the impact of the blade as it pierces a hole through your chest. *",
@@ -391,7 +404,7 @@
             "1": "<button id='who' class='dialogue'>And you are?</button><br>"
         },
         "who": {
-            "0": "<p>My name is The Sorceress Morgan Bellamy. Long have been the years I have resided here, imprisoned by The Black Witch, awaiting the return of my beloved.</p>",
+            "0": "<p>I am The Sorceress Morgan Bellamy. Long have been the years I have resided here, imprisoned by The Black Witch, awaiting the return of my beloved.</p>",
             "1": "<button id='beloved' class='dialogue'>Your beloved?</button><br>",
             "2": "<button id='witch' class='dialogue'>Who was The Witch?</button><br>",
             "eventID": "houseRestored"

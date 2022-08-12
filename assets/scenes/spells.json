@@ -47,6 +47,16 @@
         "edged": 20,
         "piercing": 0
     },
+    "cure": {
+        "id": "cure",
+        "name": "Cure",
+        "type": "healing",
+        "statEffected": "hp",
+        "description": "Replenishes HP",
+        "cost": 3,
+        "sanity": 5,
+        "baseHeal": 30
+    },
     "rageStrike": {
         "id": "rageStrike",
         "name": "Rage Strike",

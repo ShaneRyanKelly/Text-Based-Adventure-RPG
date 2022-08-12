@@ -39,6 +39,24 @@
         "effect": false,
         "singleUse": false
     },
+    "antiquatedShirt": {
+        "id": "antiquatedShirt",
+        "name": "Antiquated Shirt",
+        "description": "It has a loose collar and baggy arms",
+        "quantity": 0,
+        "type": "equip",
+        "class": "armor",
+        "defense": 3,
+        "magicDefense": 3,
+        "evasion": 3,
+        "blunt": 3,
+        "edged": 3,
+        "piercing": 3,
+        "affinity": "none",
+        "shopPrice": 200,
+        "sellingPrice": 75,
+        "equipped": false
+    },
     "baseballBat": {
         "id": "baseballBat",
         "name": "Baseball Bat",
@@ -190,6 +208,18 @@
         "sellingPrice": 100,
         "equipped": false
     },
+    "cureMagazine": {
+        "id": "cureMagazine",
+        "name": "Magical Morgan #1",
+        "description": "teaches the spell Cure",
+        "quantity": 0,
+        "type": "consumable",
+        "statEffected": "magic",
+        "teaches": "cure",
+        "singleUse": true,
+        "shopPrice": 333,
+        "sellingPrice": 150
+    },
     "ether": {
         "id": "ether",
         "name": "Ether",
@@ -274,6 +304,17 @@
         "singleUse": true,
         "shopPrice": 333,
         "sellingPrice": 150
+    },
+    "flower": {
+        "id": "flower",
+        "name": "Red Flower",
+        "description": "A uniquely beautiful red flower.",
+        "quantity": 0,
+        "type": "usable",
+        "onUse": "You hand Sam the flower.",
+        "statEffected": false,
+        "effect": false,
+        "singleUse": true
     },
     "foodTray": {
         "id": "foodTray",

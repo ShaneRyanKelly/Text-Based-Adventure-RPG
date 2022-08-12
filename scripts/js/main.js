@@ -1199,7 +1199,9 @@ function consumeItem(){
     $("#inspect").html("You consume " + selectedItem["name"]);
     if (selectedItem["statEffected"] == "hp"){
         owHeal();
-        update();
+        if (inBattle){
+            update();
+        }
     }
     else if (selectedItem["statEffected"] == "magic"){
         addSpell(selectedItem["teaches"]);
