@@ -511,6 +511,22 @@
         "albatrossDies": {
             "0": "Recently, the somber cries of The Great Albatross can be heard all over the continent. I wonder what happened to make it so sad.",
             "1":"<button id='greeting' class='dialogue'>Let's talk about something else.</button><br>"
+        },
+        "flower": {
+            "0": "* A mischievous grin sneaks onto Sam's face * The new flowers are perfect, exactly as I asked for and more, thank you, truly.",
+            "1":"<button id='flower2' class='dialogue'>Why are you smiling like that? What is it about this flower that is so special?</button><br>"
+        },
+        "flower2": {
+            "0": "Your bringing me this flower has not only beautified my garden, but also fulfilled a centuries old prophecy.",
+            "1":"<button id='flower3' class='dialogue'>Prophecy? What do you mean?</button><br>"
+        },
+        "flower3": {
+            "0": "Why, the return of The White Witch of course! You see, it has been told that one such as yourself, a stranger, would come to this land and free The White Witch from the tyranny of her dark counterpart. This whole town has acted as a containment zone for The Witch, but with her release we shall now observe while a great magical catastrophe occurs!",
+            "1":"<button id='flower4' class='dialogue'>Catastrophe!?</button><br>"
+        },
+        "flower4": {
+            "0": "I am only an agent provocateur, to learn more you will need to speak with an expert. Go now to <span class='exit'>Aubrey's Inn</span>, the Innkeeper is a High Wizard of the council, inform him of what you have done, though I trust that he is already aware, thanks to the disturbances in the Aether you have caused. * laughs maniacally * Oh, what a wonderful day!",
+            "eventID": "whiteWitch"
         }
     },
     "sherm": {

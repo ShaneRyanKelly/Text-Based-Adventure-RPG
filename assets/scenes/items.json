@@ -340,6 +340,18 @@
         "effect": false,
         "singleUse": false
     },
+    "gingerAle": {
+        "id": "gingerAle",
+        "name": "Ginger Ale",
+        "description": "Cures Poison",
+        "quantity": 0,
+        "type": "consumable",
+        "statEffected": "poison",
+        "effect": 30,
+        "singleUse": true,
+        "shopPrice": 33,
+        "sellingPrice": 13
+    },
     "glove": {
         "id": "glove",
         "name": "Glove",

@@ -57,6 +57,19 @@
         "sanity": 5,
         "baseHeal": 30
     },
+    "poison": {
+        "id": "poison",
+        "name": "Poison",
+        "type": "status",
+        "effect": "poison",
+        "strongAgainst": "",
+        "weakAgainst": "",
+        "description": "Poisons target",
+        "cost": 3,
+        "sanity": 5,
+        "baseDamage": 10,
+        "baseChance": 148
+    },
     "rageStrike": {
         "id": "rageStrike",
         "name": "Rage Strike",

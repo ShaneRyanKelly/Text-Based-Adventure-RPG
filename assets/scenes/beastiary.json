@@ -62,7 +62,7 @@
         "magicDefense": 10,
         "weaponAffinity": "none",
         "armorAffinity": "water",
-        "attacks": [ "attack" ],
+        "attacks": [ "attack", "poison" ],
         "imageURL": "",
         "fin": 200,
         "exp": 66
@@ -396,7 +396,7 @@
         "accuracy": 15,
         "defense": 20,
         "bluntDef": 50,
-        "edgedDef": -50,
+        "edgedDef": -25,
         "piercingDef": 50,
         "evasion": 15,
         "magicDefense": 20,

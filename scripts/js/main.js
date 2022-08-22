@@ -18,7 +18,7 @@ var skills = [];
 var journal = [];
 
 class Player{
-    constructor(name, playerClass, level, hp, maxHP, mp, maxMP, rage, sanity, strength, agility, intelligence, stamina, luck, baseAttack, attack, bluntAtt, edgedAtt, piercingAtt, baseAccuracy, accuracy, baseDefense, defense, bluntDef, edgedDef, piercingDef, baseEvasion, evasion, baseMDefense, magicDefense, weapon, armor, accessory, weaponAffinity, armorAffinity, fin, exp, next){
+    constructor(name, playerClass, level, hp, maxHP, mp, maxMP, rage, sanity, strength, agility, intelligence, stamina, luck, baseAttack, attack, bluntAtt, edgedAtt, piercingAtt, baseAccuracy, accuracy, baseDefense, defense, bluntDef, edgedDef, piercingDef, baseEvasion, evasion, baseMDefense, magicDefense, status, weapon, armor, accessory, weaponAffinity, armorAffinity, fin, exp, next){
         this.name = name;
         this.playerClass = playerClass;
         this.level = level,
@@ -49,6 +49,7 @@ class Player{
         this.evasion = evasion;
         this.baseMDefense = baseMDefense;
         this.magicDefense = magicDefense;
+        this.status = status;
         this.weapon = weapon;
         this.armor = armor;
         this.accessory = accessory;
@@ -93,6 +94,7 @@ function getLocalCharacter(){
             jsonArray["stats"]["evasion"],
             jsonArray["stats"]["baseMDefense"],
             jsonArray["stats"]["magicDefense"],
+            jsonArray["stats"]["status"],
             jsonArray["equip"]["weapon"],
             jsonArray["equip"]["armor"],
             jsonArray["equip"]["accessory"],
@@ -606,6 +608,12 @@ function resolveTurn(){
     
     var turnOrder = turns();
 
+    if (player.status == "poison"){
+        var poisonDamage = Math.round((player.maxHP / 20));
+        player.hp -= poisonDamage;
+        $("#addScreen").append("<p>" + player.name + " is poisoned! " + player.name + " suffers " + poisonDamage + " damage!</p>");
+    }
+
     for(let i = 0; i < Object.keys(turnOrder).length; i++){
         if (turnOrder[i]["attackType"] == "attack"){
             $("#addScreen").append("<p>" + turnOrder[i]["name"] + " attacks dealing " + turnOrder[i]["damage"] + " damage</p>");
@@ -641,13 +649,18 @@ function getEnemyDamage(){
         enemy["spellName"] = spellArray[enemyAttack]["name"];
         return getSpellDamage(spellArray[enemyAttack], enemy, player);
     }
+    else if(spellArray[enemyAttack]["type"] == "status"){
+        enemy["attackType"] = "magic";
+        enemy["spellName"] = spellArray[enemyAttack]["name"];
+        return getStatusDamage(spellArray[enemyAttack], enemy, player);
+    }
 }
 
 function getSpellDamage(spell, player1, player2){
     var multiplier = getAffinityMultiplier(spell);
     player1.mp -= spell["cost"];
     player1.sanity -= randomInt(spell["sanity"]);
-    return Math.round(multiplier * (((spell["baseDamage"] - (enemy.magicDefense / 2)) + ((spell["baseDamage"] - (enemy.magicDefense / 2 + 1)) * randomInt(256)) / 256) / 4));
+    return Math.round(multiplier * (((spell["baseDamage"] - (player2.magicDefense / 2)) + ((spell["baseDamage"] - (player2.magicDefense / 2 + 1)) * randomInt(256)) / 256) / 4));
 }
 
 function getSkillDamage(skill, player1, player2){
@@ -663,6 +676,18 @@ function getSkillDamage(skill, player1, player2){
     }
     player1.rage -= skill["cost"];
     return Math.round(((player1.attack + skill["baseDamage"]) - (player2.defense/2) + (((player1.attack + skill["baseDamage"]) - (player2.defense/2+1))*randomInt(256))/256) * ((100 + modifier) / 100));
+}
+
+function getStatusDamage(spell, player1, player2){
+    var multiplier = getAffinityMultiplier(spell);
+    console.log("status effect");
+    player1.mp -= spell["cost"];
+    player1.sanity -= randomInt(spell["sanity"]);
+    var statusHit = (spell["baseChance"] - player2.magicDefense) / 201;
+    if (statusHit){
+        player2.status = spell["effect"];
+    }
+    return Math.round(multiplier * (((spell["baseDamage"] - (player2.magicDefense / 2)) + ((spell["baseDamage"] - (player2.magicDefense / 2 + 1)) * randomInt(256)) / 256) / 4));
 }
 
 function getAffinityMultiplier(spell){
@@ -1208,6 +1233,9 @@ function consumeItem(){
     }
     else if (selectedItem["statEffected"] == "skill"){
         addSkill(selectedItem["teaches"]);
+    }
+    else if (selectedItem["statEffected"] == "poison"){
+        player.status = "";
     }
     console.log(player);
     if (selectedItem["singleUse"]){
