@@ -748,14 +748,14 @@
             "whiteWitch": {
                 "triggered": false,
                 "id": "whiteWitch",
-                "modifiesScene": [],
-                "modifiesIndex": [],
-                "modifiesHtml": [],
-                "modifiesCharacter": ["innKeeper"],
-                "dialogueIndex": ["append"],
-                "modifiesDialogue": [
-                    "<button id='whiteWitch' class='dialogue'>I fear I have made a grave mistake...</button><br>"
+                "modifiesScene": ["aubreys"],
+                "modifiesIndex": ["innKeeper"],
+                "modifiesHtml": [
+                    "Behind the counter <span id='highWizard' class='character'>The High Wizard</span> sits with his head in his hands.<br><br>"
                 ],
+                "modifiesCharacter": false,
+                "dialogueIndex": false,
+                "modifiesDialogue": false,
                 "journal": false
             }
         },
