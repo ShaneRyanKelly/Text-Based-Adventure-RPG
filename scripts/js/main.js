@@ -2,7 +2,7 @@
 
 var clickSource;
 
-var sceneName = "town";
+var sceneName = "meadow";
 var currentScene;
 var sceneIndex = 0;
 
